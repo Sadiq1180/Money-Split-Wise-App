@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_core/shared/constants/app_assets.dart';
 
 class HomeGreeting extends StatelessWidget implements PreferredSizeWidget {
   const HomeGreeting({super.key});
@@ -24,7 +25,7 @@ class HomeGreeting extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   child: ClipOval(
                     child: Image.asset(
-                      'assets/images/AppLogo.png',
+                      AppAssets.appLogo,
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
                         return Container(

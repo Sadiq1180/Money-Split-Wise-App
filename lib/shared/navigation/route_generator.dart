@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:project_core/presentation/views/screens/main_screens/login_screen/home_screen/home_page.dart';
+import 'package:project_core/presentation/views/screens/main_screens/home_screen/home_page.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/login_screen.dart';
 import '../../main.dart';
 import '../../presentation/views/dummy_screen.dart';
@@ -21,22 +21,22 @@ final router = GoRouter(
       path: '/${DummyScreen.routeName}',
       builder: (context, state) => const DummyScreen(),
     ),
-    GoRoute(
-      name: MainScreen.routeName,
-      path: '/${MainScreen.routeName}',
-      builder: (context, state) => const MainScreen(),
-    ),
+    // GoRoute(
+    //   name: MainScreen.routeName,
+    //   path: '/${MainScreen.routeName}',
+    //   builder: (context, state) => const MainScreen(),
+    // ),
 
     /// added screens for split app
     GoRoute(
       name: LoginScreen.routeName,
       path: '/${LoginScreen.routeName}',
-      builder: (context, state) => const HomePage(),
+      builder: (context, state) => const LoginScreen(),
     ),
     GoRoute(
-      name: HomePage.routeName,
-      path: '/${HomePage.routeName}',
-      builder: (context, state) => const HomePage(),
+      name: MainScreen.routeName,
+      path: '/${MainScreen.routeName}',
+      builder: (context, state) => const MainScreen(),
     ),
   ],
 );

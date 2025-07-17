@@ -7,6 +7,7 @@ class CustomElevatedButton extends StatelessWidget {
   final Color textColor;
   final String text;
   final IconData? icon;
+  final String? imageAsset;
   final Color? iconBackgroundColor;
 
   const CustomElevatedButton({
@@ -14,58 +15,89 @@ class CustomElevatedButton extends StatelessWidget {
     required this.onPressed,
     required this.isOutlined,
     required this.text,
-    this.backgroundColor = const Color(0xFFD4AF37), // for
+    this.backgroundColor = const Color(0xFFD4AF37),
     this.textColor = Colors.white,
     this.icon,
+    this.imageAsset,
     this.iconBackgroundColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Widget? leadingWidget;
+
+    if (imageAsset != null) {
+      final isAppleIcon = imageAsset!.toLowerCase().contains('apple');
+
+      leadingWidget = Container(
+        width: 24,
+        height: 24,
+        margin: const EdgeInsets.only(right: 10),
+        decoration: const BoxDecoration(shape: BoxShape.circle),
+        child: ClipOval(
+          child: Image.asset(
+            imageAsset!,
+            fit: BoxFit.contain,
+            color: isAppleIcon ? Colors.white : null,
+            colorBlendMode: isAppleIcon ? BlendMode.srcIn : null,
+          ),
+        ),
+      );
+    } else if (icon != null) {
+      leadingWidget = Container(
+        // width: 24,
+        // height: 25,
+        margin: const EdgeInsets.only(right: 10),
+        decoration: BoxDecoration(
+          color: iconBackgroundColor ?? Colors.white,
+          shape: BoxShape.circle,
+        ),
+        child: Icon(icon, size: 16, color: Colors.white),
+      );
+    }
+
     final buttonChild = Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        if (icon != null)
-          Container(
-            width: 20,
-            height: 20,
-            margin: const EdgeInsets.only(right: 12),
-            decoration: BoxDecoration(
-              color: iconBackgroundColor ?? Colors.white,
-              shape: BoxShape.circle,
+        if (leadingWidget != null) leadingWidget,
+        Flexible(
+          child: Text(
+            text,
+            style: TextStyle(
+              color: textColor,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
             ),
-            child: Icon(icon, size: 16, color: Colors.white),
-          ),
-        Text(
-          text,
-          style: TextStyle(
-            color: textColor,
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
           ),
         ),
       ],
     );
 
+    final commonStyle = ButtonStyle(
+      padding: MaterialStateProperty.all(
+        const EdgeInsets.symmetric(vertical: 14),
+      ),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      ),
+    );
+
     if (isOutlined) {
       return OutlinedButton(
         onPressed: onPressed,
-        style: OutlinedButton.styleFrom(
-          side: BorderSide(color: backgroundColor),
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        style: commonStyle.copyWith(
+          side: MaterialStateProperty.all(BorderSide(color: backgroundColor)),
         ),
         child: buttonChild,
       );
     } else {
       return ElevatedButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
-          foregroundColor: textColor,
-          padding: const EdgeInsets.symmetric(vertical: 14),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          elevation: 0,
+        style: commonStyle.copyWith(
+          backgroundColor: MaterialStateProperty.all(backgroundColor),
+          foregroundColor: MaterialStateProperty.all(textColor),
+          elevation: MaterialStateProperty.all(0),
         ),
         child: buttonChild,
       );

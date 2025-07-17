@@ -38,13 +38,16 @@ class _RememberMeAndForgotPasswordRowState
             ),
           ],
         ),
-        TextButton(
-          onPressed: () {
-            // Add forget password logic here
-          },
-          child: const Text(
-            'Forget Password ?',
-            style: TextStyle(color: Color(0xFF4CAF50), fontSize: 14),
+        Padding(
+          padding: const EdgeInsets.only(left: 15.0),
+          child: TextButton(
+            onPressed: () {
+              // Add forget password logic here
+            },
+            child: const Text(
+              'Forget Password ?',
+              style: TextStyle(color: Color(0xFF4CAF50), fontSize: 14),
+            ),
           ),
         ),
       ],

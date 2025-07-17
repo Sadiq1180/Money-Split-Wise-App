@@ -54,7 +54,7 @@ class _LabeledTextFieldState extends State<LabeledTextField> {
             fillColor: const Color(0xFF3D3D3D),
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 16,
-              vertical: 16,
+              vertical: 10,
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
