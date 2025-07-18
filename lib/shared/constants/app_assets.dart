@@ -12,4 +12,10 @@ class AppAssets {
   static const users = "assets/svgs/users.svg";
   static const insights = "assets/svgs/insights.svg";
   static const profile = "assets/svgs/profile.svg";
+
+  /// jped persons images
+  static const person1 = "assets/images/person1.jpg";
+  static const person2 = "assets/images/person2.jpg";
+  static const person3 = "assets/images/person3.jpg";
+  static const person4 = "assets/images/person4.jpg";
 }

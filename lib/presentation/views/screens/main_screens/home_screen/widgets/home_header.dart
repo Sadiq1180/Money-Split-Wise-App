@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/shared/constants/app_assets.dart';
+import 'package:project_core/shared/constants/app_colors.dart';
 
 class HomeGreeting extends StatelessWidget implements PreferredSizeWidget {
   const HomeGreeting({super.key});
@@ -85,9 +86,9 @@ class HomeGreeting extends StatelessWidget implements PreferredSizeWidget {
                     width: 8,
                     height: 8,
                     decoration: BoxDecoration(
-                      color: Colors.green,
+                      color: AppColors.secondary,
                       shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white, width: 1.5),
+                      // border: Border.all(color: Colors.white, width: 1.5),
                     ),
                   ),
                 ),

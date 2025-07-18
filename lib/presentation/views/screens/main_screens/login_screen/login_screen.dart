@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
-import 'package:project_core/presentation/views/screens/main_screens/home_screen/home_page.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/app_header.dart';
-import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/custom_label_field.dart';
+import 'package:project_core/presentation/widgets/custom_label_field.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/divider.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/remember_and_forgot_row.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/social_buttons.dart';
 import 'package:project_core/presentation/views/screens/main_screens/main_screen.dart';
-import 'package:project_core/presentation/widgets/bottom_navigation.dart';
-import 'package:project_core/presentation/widgets/custom_bottom_navigation.dart';
 import 'package:project_core/shared/shared.dart';
 
 class LoginScreen extends StatefulWidget {

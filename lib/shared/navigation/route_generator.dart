@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:project_core/presentation/views/screens/main_screens/home_screen/home_page.dart';
+import 'package:project_core/presentation/views/screens/main_screens/home_screen/add_bill.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/login_screen.dart';
 import '../../main.dart';
 import '../../presentation/views/dummy_screen.dart';
@@ -37,6 +37,11 @@ final router = GoRouter(
       name: MainScreen.routeName,
       path: '/${MainScreen.routeName}',
       builder: (context, state) => const MainScreen(),
+    ),
+    GoRoute(
+      name: AddBill.routeName,
+      path: '/${AddBill.routeName}',
+      builder: (context, state) => const AddBill(),
     ),
   ],
 );
