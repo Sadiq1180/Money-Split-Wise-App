@@ -1,9 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:project_core/presentation/views/screens/main_screens/notifications/notifications.dart';
 import 'package:project_core/shared/constants/app_assets.dart';
 import 'package:project_core/shared/constants/app_colors.dart';
+import 'package:project_core/shared/shared.dart';
 
 class HomeGreeting extends StatelessWidget implements PreferredSizeWidget {
-  const HomeGreeting({super.key});
+  final String userName;
+  final String? profileImage;
+  final String greetingMessage;
+  final VoidCallback? onIconTap;
+  final IconData rightIcon;
+  final bool showDot;
+
+  const HomeGreeting({
+    Key? key,
+    this.userName = 'Sadiq',
+    this.profileImage,
+    this.greetingMessage = 'Easily split bills & track expenses',
+    this.onIconTap,
+    this.rightIcon = Icons.notifications_none,
+    this.showDot = true,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,78 +42,80 @@ class HomeGreeting extends StatelessWidget implements PreferredSizeWidget {
                     border: Border.all(color: Colors.white, width: 2),
                   ),
                   child: ClipOval(
-                    child: Image.asset(
-                      AppAssets.appLogo,
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Container(
-                          color: Colors.orange,
-                          child: const Icon(
-                            Icons.person,
-                            color: Colors.white,
-                            size: 25,
-                          ),
-                        );
-                      },
-                    ),
+                    child: profileImage != null
+                        ? Image.asset(profileImage!, fit: BoxFit.cover)
+                        : _fallbackAvatar(),
                   ),
                 ),
-                const SizedBox(width: 12),
+                12.spaceX,
                 // Greeting Text
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
-                      'Hi Sadiq! 👋',
-                      style: TextStyle(
+                      'Hi $userName! 👋',
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 4),
+
+                    4.spaceY,
                     Text(
-                      'Easily split bills & track expenses',
-                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                      greetingMessage,
+                      style: const TextStyle(fontSize: 14, color: Colors.grey),
                     ),
                   ],
                 ),
               ],
             ),
 
-            // Notification Icon with Dot
-            Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Color(0xFF3D3D3D),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Icon(
-                    Icons.notifications_none,
-                    color: Colors.white,
-                  ),
-                ),
-                Positioned(
-                  top: 4,
-                  right: 4,
-                  child: Container(
-                    width: 8,
-                    height: 8,
+            // Notification Icon (with optional dot)
+            GestureDetector(
+              onTap:
+                  onIconTap ??
+                  () {
+                    Navigation.pushNamed(Notifications.routeName);
+                  },
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: AppColors.secondary,
-                      shape: BoxShape.circle,
-                      // border: Border.all(color: Colors.white, width: 1.5),
+                      color: const Color(0xFF3D3D3D),
+                      borderRadius: BorderRadius.circular(12),
                     ),
+                    child: Icon(rightIcon, color: Colors.white),
                   ),
-                ),
-              ],
+                  if (showDot)
+                    Positioned(
+                      top: 4,
+                      right: 4,
+                      child: Container(
+                        width: 8,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: AppColors.secondary,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  /// Used when no profile image is provided or loading fails.
+  Widget _fallbackAvatar() {
+    return Container(
+      color: Colors.orange,
+      child: const Icon(Icons.person, color: Colors.white, size: 25),
     );
   }
 

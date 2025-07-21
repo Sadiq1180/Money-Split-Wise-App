@@ -6,6 +6,7 @@ class AppAssets {
   static const facebook = "assets/icons/facebook.png";
   static const google = "assets/icons/google.png";
   static const apple = "assets/icons/apple.png";
+  static const applewhite = "assets/icons/applewi8.png";
 
   ///Svg Picturess
   static const home = "assets/svgs/house-line.svg";

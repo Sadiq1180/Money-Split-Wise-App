@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:project_core/presentation/views/screens/main_screens/friends_group/friends_group.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/home_page.dart';
+import 'package:project_core/presentation/views/screens/main_screens/profile/user_profile.dart';
 import 'package:project_core/presentation/widgets/custom_bottom_navigation.dart';
 
 import '../../../../providers/main_provider.dart';
@@ -18,15 +20,12 @@ class MainScreen extends ConsumerStatefulWidget {
 class _MainScreenState extends ConsumerState<MainScreen> {
   List<Widget> screens = [
     HomePage(),
-    Center(
-      child: Text('Splinters', style: TextStyle(color: Colors.white)),
-    ),
-    Center(
-      child: Text('Insights', style: TextStyle(color: Colors.white)),
-    ),
+    FriendsAndGroup(),
     Center(
       child: Text('Profile', style: TextStyle(color: Colors.white)),
     ),
+
+    UserProfile(),
   ];
 
   @override

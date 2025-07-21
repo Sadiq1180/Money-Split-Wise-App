@@ -9,6 +9,7 @@ class TitleWithOptionalButton extends StatelessWidget {
   final VoidCallback? onTap;
   final Color? buttonColor;
   final bool showIcon;
+  final TextStyle? buttonTextStyle; // ✅ New property
 
   const TitleWithOptionalButton({
     super.key,
@@ -19,6 +20,7 @@ class TitleWithOptionalButton extends StatelessWidget {
     this.onTap,
     this.buttonColor,
     this.showIcon = true,
+    this.buttonTextStyle, // ✅ Constructor argument
   });
 
   @override
@@ -39,33 +41,37 @@ class TitleWithOptionalButton extends StatelessWidget {
           ),
 
           // Right: Optional Button
-          // if (showButton)
-          GestureDetector(
-            onTap: onTap,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              decoration: BoxDecoration(
-                color: buttonColor,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Row(
-                children: [
-                  !showIcon
-                      ? SizedBox.shrink()
-                      : Icon(buttonIcon, size: 16, color: Colors.amberAccent),
-                  6.spaceX,
-                  Text(
-                    buttonText,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.amberAccent,
+          if (showButton)
+            GestureDetector(
+              onTap: onTap,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  color: buttonColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  children: [
+                    if (showIcon)
+                      Icon(buttonIcon, size: 16, color: Colors.amberAccent),
+                    if (showIcon) 6.spaceX,
+                    Text(
+                      buttonText,
+                      style:
+                          buttonTextStyle ??
+                          const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.amberAccent,
+                          ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
         ],
       ),
     );

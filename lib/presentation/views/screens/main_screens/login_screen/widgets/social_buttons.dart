@@ -27,26 +27,14 @@ class CustomElevatedButton extends StatelessWidget {
     Widget? leadingWidget;
 
     if (imageAsset != null) {
-      final isAppleIcon = imageAsset!.toLowerCase().contains('apple');
-
       leadingWidget = Container(
-        width: 24,
-        height: 24,
+        width: 22,
+        height: 22,
         margin: const EdgeInsets.only(right: 10),
-        decoration: const BoxDecoration(shape: BoxShape.circle),
-        child: ClipOval(
-          child: Image.asset(
-            imageAsset!,
-            fit: BoxFit.contain,
-            color: isAppleIcon ? Colors.white : null,
-            colorBlendMode: isAppleIcon ? BlendMode.srcIn : null,
-          ),
-        ),
+        child: Image.asset(imageAsset!, fit: BoxFit.contain),
       );
     } else if (icon != null) {
       leadingWidget = Container(
-        // width: 24,
-        // height: 25,
         margin: const EdgeInsets.only(right: 10),
         decoration: BoxDecoration(
           color: iconBackgroundColor ?? Colors.white,

@@ -43,7 +43,7 @@ class CustomBottomNavigation extends StatelessWidget {
           bottomNavigationBarItem(AppAssets.home, 'Home', currentIndex == 0),
           bottomNavigationBarItem(
             AppAssets.users,
-            'Splinters',
+            'Friends',
             currentIndex == 1,
           ),
           bottomNavigationBarItem(

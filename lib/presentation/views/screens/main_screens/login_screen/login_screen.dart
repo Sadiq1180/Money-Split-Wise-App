@@ -50,10 +50,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   isPassword: true,
                 ),
 
-                10.spaceY,
+                12.spaceY,
                 // Remember Me & Forgot Password
                 RememberMeAndForgotPasswordRow(),
-                10.spaceY,
+                12.spaceY,
                 // Login Button aligned with
                 CustomElevatedButton(
                   onPressed: () {
@@ -62,10 +62,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   isOutlined: false,
                   text: 'Login',
                 ),
-                10.spaceY,
+                12.spaceY,
                 // OR Divider
                 CustomDivider(),
-                10.spaceY,
+                15.spaceY,
                 // Facebook Login Button
                 CustomElevatedButton(
                   onPressed: () {},
@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {},
                   isOutlined: true,
                   text: 'Login with Apple',
-                  imageAsset: AppAssets.apple,
+                  imageAsset: AppAssets.applewhite,
                   backgroundColor: Colors.grey[600]!,
                 ),
               ],

@@ -22,6 +22,8 @@ class _RememberMeAndForgotPasswordRowState
             Transform.scale(
               scale: 0.8,
               child: Checkbox(
+                visualDensity: VisualDensity(horizontal: -4.0, vertical: -4.0),
+
                 value: _rememberMe,
                 onChanged: (value) {
                   setState(() {
@@ -38,16 +40,16 @@ class _RememberMeAndForgotPasswordRowState
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 15.0),
-          child: TextButton(
-            onPressed: () {
-              // Add forget password logic here
-            },
-            child: const Text(
-              'Forget Password ?',
-              style: TextStyle(color: Color(0xFF4CAF50), fontSize: 14),
-            ),
+        TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+            minimumSize: Size.zero,
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          ),
+          child: const Text(
+            'Forget Password ?',
+            style: TextStyle(color: Color(0xFF4CAF50), fontSize: 14),
           ),
         ),
       ],

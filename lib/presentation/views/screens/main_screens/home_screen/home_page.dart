@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 //Greetings with icon
-                HomeGreeting(),
+                HomeGreeting(profileImage: AppAssets.person3),
                 //Divider
                 Padding(
                   padding: const EdgeInsets.only(left: 5, right: 5),

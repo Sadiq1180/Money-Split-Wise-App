@@ -1,6 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:project_core/presentation/views/screens/main_screens/friends_group/friends_group.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/add_bill.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/login_screen.dart';
+import 'package:project_core/presentation/views/screens/main_screens/notifications/notifications.dart';
+import 'package:project_core/presentation/views/screens/main_screens/profile/user_profile.dart';
 import '../../main.dart';
 import '../../presentation/views/dummy_screen.dart';
 import '../../presentation/views/screens/main_screens/main_screen.dart';
@@ -42,6 +46,21 @@ final router = GoRouter(
       name: AddBill.routeName,
       path: '/${AddBill.routeName}',
       builder: (context, state) => const AddBill(),
+    ),
+    GoRoute(
+      name: FriendsAndGroup.routeName,
+      path: '/${FriendsAndGroup.routeName}',
+      builder: (context, state) => const FriendsAndGroup(),
+    ),
+    GoRoute(
+      name: Notifications.routeName,
+      path: '/${Notifications.routeName}',
+      builder: (context, state) => const Notifications(),
+    ),
+    GoRoute(
+      name: UserProfile.routeName,
+      path: '/${UserProfile.routeName}',
+      builder: (context, state) => const UserProfile(),
     ),
   ],
 );
