@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:project_core/presentation/views/screens/main_screens/friends_group/friends_group.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/home_page.dart';
+import 'package:project_core/presentation/views/screens/main_screens/insight_screen/insights.dart';
 import 'package:project_core/presentation/views/screens/main_screens/profile/user_profile.dart';
 import 'package:project_core/presentation/widgets/custom_bottom_navigation.dart';
 
@@ -21,10 +22,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
   List<Widget> screens = [
     HomePage(),
     FriendsAndGroup(),
-    Center(
-      child: Text('Profile', style: TextStyle(color: Colors.white)),
-    ),
-
+    InsightsScreen(),
     UserProfile(),
   ];
 
