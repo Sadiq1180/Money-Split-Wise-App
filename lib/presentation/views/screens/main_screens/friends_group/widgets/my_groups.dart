@@ -9,6 +9,7 @@ class MyGroups extends StatelessWidget {
   final Color iconColor;
   final IconData rightIcon;
   final Widget? trailingWidget;
+  final VoidCallback? onTap; // <-- Added onTap
 
   const MyGroups({
     Key? key,
@@ -19,6 +20,7 @@ class MyGroups extends StatelessWidget {
     this.iconColor = Colors.white,
     this.rightIcon = Icons.keyboard_arrow_right,
     this.trailingWidget,
+    this.onTap, // <-- Constructor
   }) : super(key: key);
 
   @override
@@ -26,66 +28,69 @@ class MyGroups extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // Optional Left Icon
-              if (icon != null) ...[
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: AppColors.darkerGrey,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Center(child: Icon(icon, color: iconColor, size: 22)),
-                ),
-                const SizedBox(width: 12),
-              ],
-
-              // Title and Subtitles
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
+        InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(12),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                if (icon != null) ...[
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: AppColors.darkerGrey,
+                      borderRadius: BorderRadius.circular(8),
                     ),
-                    const SizedBox(height: 4),
-                    if (subtitle1 != null)
-                      Text(
-                        subtitle1!,
-                        style: const TextStyle(
-                          color: Colors.greenAccent,
-                          fontSize: 14,
-                        ),
-                      ),
-                    if (subtitle2 != null)
-                      Text(
-                        subtitle2!,
-                        style: const TextStyle(
-                          color: Colors.greenAccent,
-                          fontSize: 14,
-                        ),
-                      ),
-                  ],
-                ),
-              ),
+                    child: Center(
+                      child: Icon(icon, color: iconColor, size: 22),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                ],
 
-              // Right icon and optional widget
-              // Right icon or trailing widget
-              trailingWidget != null
-                  ? trailingWidget!
-                  : Icon(rightIcon, color: Colors.grey.shade400, size: 22),
-            ],
+                // Title and Subtitles
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      if (subtitle1 != null)
+                        Text(
+                          subtitle1!,
+                          style: const TextStyle(
+                            color: Colors.greenAccent,
+                            fontSize: 14,
+                          ),
+                        ),
+                      if (subtitle2 != null)
+                        Text(
+                          subtitle2!,
+                          style: const TextStyle(
+                            color: Colors.greenAccent,
+                            fontSize: 14,
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+
+                // Right icon or trailing widget
+                trailingWidget ??
+                    Icon(rightIcon, color: Colors.grey.shade400, size: 22),
+              ],
+            ),
           ),
         ),
 

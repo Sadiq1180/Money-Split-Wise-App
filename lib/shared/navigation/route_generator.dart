@@ -4,7 +4,9 @@ import 'package:project_core/presentation/views/screens/main_screens/friends_gro
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/add_bill.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/login_screen.dart';
 import 'package:project_core/presentation/views/screens/main_screens/notifications/notifications.dart';
+import 'package:project_core/presentation/views/screens/main_screens/profile/settings/edit_profile.dart';
 import 'package:project_core/presentation/views/screens/main_screens/profile/user_profile.dart';
+import 'package:project_core/presentation/views/screens/main_screens/sign_in/sign_up.dart';
 import '../../main.dart';
 import '../../presentation/views/dummy_screen.dart';
 import '../../presentation/views/screens/main_screens/main_screen.dart';
@@ -61,6 +63,16 @@ final router = GoRouter(
       name: UserProfile.routeName,
       path: '/${UserProfile.routeName}',
       builder: (context, state) => const UserProfile(),
+    ),
+    GoRoute(
+      name: SignUpScreen.routeName,
+      path: '/${SignUpScreen.routeName}',
+      builder: (context, state) => const SignUpScreen(),
+    ),
+    GoRoute(
+      name: EditProfile.routeName,
+      path: '/${EditProfile.routeName}',
+      builder: (context, state) => const EditProfile(),
     ),
   ],
 );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/app_header.dart';
+import 'package:project_core/presentation/views/screens/main_screens/sign_in/sign_up.dart';
 import 'package:project_core/presentation/widgets/custom_label_field.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/divider.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/remember_and_forgot_row.dart';
@@ -37,8 +38,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 24.spaceY,
                 // Username Field
                 LabeledTextField(
-                  label: 'User Name',
-                  hint: 'Enter your Name',
+                  label: 'User Name or email',
+                  hint: 'Enter your Name or email',
                   controller: _usernameController,
                 ),
                 24.spaceY,
@@ -62,6 +63,20 @@ class _LoginScreenState extends State<LoginScreen> {
                   isOutlined: false,
                   text: 'Login',
                 ),
+                20.spaceY,
+                TextButton(
+                  onPressed: () {
+                    Navigation.pushNamed(SignUpScreen.routeName);
+                  },
+                  child: Text("Create Account"),
+                ),
+                // CustomElevatedButton(
+                //   onPressed: () {
+                //     Navigation.pushNamed(MainScreen.routeName);
+                //   },
+                //   isOutlined: false,
+                //   text: 'Sign Up',
+                // ),
                 12.spaceY,
                 // OR Divider
                 CustomDivider(),

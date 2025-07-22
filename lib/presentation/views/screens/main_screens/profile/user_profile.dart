@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/views/screens/main_screens/friends_group/widgets/my_groups.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/widgets/home_header.dart';
+import 'package:project_core/presentation/views/screens/main_screens/profile/settings/edit_profile.dart';
 import 'package:project_core/shared/constants/app_assets.dart';
 import 'package:project_core/shared/constants/app_colors.dart';
 import 'package:project_core/shared/extensions/sized_box.dart';
+import 'package:project_core/shared/navigation/navigation.dart';
 
 class UserProfile extends StatefulWidget {
   static const String routeName = "User_profile";
@@ -55,7 +57,13 @@ class _UserProfileState extends State<UserProfile> {
                 ),
                 10.spaceY,
 
-                MyGroups(title: "Edit Profile", icon: Icons.person_2_outlined),
+                MyGroups(
+                  title: "Edit Profile",
+                  icon: Icons.person_2_outlined,
+                  onTap: () {
+                    Navigation.pushNamed(EditProfile.routeName);
+                  },
+                ),
                 10.spaceY,
                 MyGroups(
                   title: "Transaction History",

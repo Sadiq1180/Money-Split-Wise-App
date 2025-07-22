@@ -44,7 +44,7 @@ class _AddBillState extends State<AddBill> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // 🔙 Back and Title
+                  //  Back and Title
                   Row(
                     children: [
                       GestureDetector(
@@ -54,6 +54,7 @@ class _AddBillState extends State<AddBill> {
                           color: Colors.white,
                         ),
                       ),
+
                       10.spaceX,
                       const Text(
                         "Create a new Bill",

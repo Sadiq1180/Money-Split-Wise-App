@@ -37,7 +37,7 @@ class _FriendsAndGroupState extends State<FriendsAndGroup>
         child: SafeArea(
           child: Column(
             children: [
-              // Header (Fixed at top)
+              // Header
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: FriendsListHeader(),
@@ -78,7 +78,7 @@ class _FriendsAndGroupState extends State<FriendsAndGroup>
                 ),
               ),
 
-              // Tab Content (Takes remaining space)
+              // Tab Content
               Expanded(
                 child: TabBarView(
                   controller: _tabController,

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class InsightsScreen extends StatelessWidget {
+final vslue = StateProvider<int>((ref) => 0);
+
+class InsightsScreen extends ConsumerWidget {
   static const String routeName = "insights";
   const InsightsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final value = ref.watch(vslue);
     return Container(
-      color: const Color(0xFF121212), // Dark background
+      color: const Color(0xFF121212),
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +68,6 @@ class InsightsScreen extends StatelessWidget {
               ),
             ],
           ),
-
           const SizedBox(height: 20),
 
           // Top Friends
@@ -75,11 +78,11 @@ class InsightsScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+
           const SizedBox(height: 12),
           _FriendRow(name: "Ali", amount: "\$40", isPositive: true),
           _FriendRow(name: "Khan", amount: "\$70", isPositive: false),
           _FriendRow(name: "Sara", amount: "\$20", isPositive: true),
-
           const SizedBox(height: 20),
 
           // Chart placeholder
