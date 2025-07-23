@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/app_header.dart';
@@ -63,53 +64,34 @@ class _LoginScreenState extends State<LoginScreen> {
                   isOutlined: false,
                   text: 'Login',
                 ),
-                20.spaceY,
-                TextButton(
-                  onPressed: () {
-                    Navigation.pushNamed(SignUpScreen.routeName);
-                  },
-                  child: Text("Create Account"),
-                ),
-                // CustomElevatedButton(
-                //   onPressed: () {
-                //     Navigation.pushNamed(MainScreen.routeName);
-                //   },
-                //   isOutlined: false,
-                //   text: 'Sign Up',
-                // ),
-                12.spaceY,
-                // OR Divider
-                CustomDivider(),
-                15.spaceY,
-                // Facebook Login Button
-                CustomElevatedButton(
-                  onPressed: () {},
-                  isOutlined: true,
-                  text: 'Login with Facebook',
-                  imageAsset: AppAssets.facebook,
-                  // icon: Icons.facebook,
-                  iconBackgroundColor: Color(0xFF1877F2),
-                  backgroundColor: Colors.grey[600]!,
-                ),
-                20.spaceY,
-
-                ///google login button
-                CustomElevatedButton(
-                  onPressed: () {},
-                  isOutlined: true,
-                  text: 'Login with Google',
-                  // icon: FontAwesomeIcons.google,
-                  imageAsset: AppAssets.google,
-                  iconBackgroundColor: Color(0xFF1877F2),
-                  backgroundColor: Colors.grey[600]!,
-                ),
-                20.spaceY,
-                CustomElevatedButton(
-                  onPressed: () {},
-                  isOutlined: true,
-                  text: 'Login with Apple',
-                  imageAsset: AppAssets.applewhite,
-                  backgroundColor: Colors.grey[600]!,
+                30.spaceY,
+              ],
+            ),
+          ),
+        ),
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+              text: "Don't have an account? ",
+              style: AppTextstyle.bodyTextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: context.theme.textTheme.bodyMedium!.color!,
+              ),
+              children: [
+                TextSpan(
+                  text: 'Sign Up',
+                  style: AppTextstyle.bodyTextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.secondary,
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigation.pushNamed(SignUpScreen.routeName);
+                    },
                 ),
               ],
             ),

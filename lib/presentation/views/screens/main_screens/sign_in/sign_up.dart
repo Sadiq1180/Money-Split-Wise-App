@@ -1,11 +1,15 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
+import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/app_header.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/social_buttons.dart';
 import 'package:project_core/presentation/widgets/custom_label_field.dart';
 import 'package:project_core/shared/constants/app_assets.dart';
 import 'package:project_core/shared/constants/app_colors.dart';
+import 'package:project_core/shared/constants/app_textstyle.dart';
 import 'package:project_core/shared/extensions/sized_box.dart';
 import 'package:project_core/shared/navigation/navigation.dart';
+import 'package:project_core/shared/shared.dart';
 
 class SignUpScreen extends StatelessWidget {
   static const String routeName = "Sign_Up";
@@ -26,14 +30,8 @@ class SignUpScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
-                  child: Image.asset(
-                    AppAssets.appLogo,
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.contain,
-                  ),
-                ),
+                const AppHeader(),
+
                 30.spaceY,
                 LabeledTextField(
                   label: "Enter your name",
@@ -64,8 +62,38 @@ class SignUpScreen extends StatelessWidget {
                     text: 'Create Account',
                   ),
                 ),
+                30.spaceY,
               ],
             ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            text: "Already have an account? ",
+            style: AppTextstyle.bodyTextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: context.theme.textTheme.bodyMedium!.color!,
+            ),
+            children: [
+              TextSpan(
+                text: 'Sign In',
+                style: AppTextstyle.bodyTextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.secondary,
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    Navigation.pop(rootNavigator: false);
+                    // Navigation.pushNamed(SignUpScreen.routeName);
+                  },
+              ),
+            ],
           ),
         ),
       ),

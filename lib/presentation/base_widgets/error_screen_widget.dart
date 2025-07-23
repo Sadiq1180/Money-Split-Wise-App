@@ -15,14 +15,18 @@ class ErrorScreenWidget extends StatelessWidget {
             Text(
               'Oops!',
               style: AppTextstyle.bodyTextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                  color: context.theme.textTheme.bodySmall!.color!),
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: context.theme.textTheme.bodySmall!.color!,
+              ),
             ),
-            Text('Some Error Occured',
-                style: AppTextstyle.bodyTextStyle(
-                    fontWeight: FontWeight.w300,
-                    color: context.theme.textTheme.displaySmall!.color!)),
+            Text(
+              'Some Error Occured',
+              style: AppTextstyle.bodyTextStyle(
+                fontWeight: FontWeight.w300,
+                color: context.theme.textTheme.displaySmall!.color!,
+              ),
+            ),
           ],
         ),
       ),

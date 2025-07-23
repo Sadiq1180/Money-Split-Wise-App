@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:project_core/presentation/views/screens/main_screens/friends_group/friends_group.dart';
-import 'package:project_core/presentation/views/screens/main_screens/home_screen/add_bill.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/add_bill.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/login_screen.dart';
 import 'package:project_core/presentation/views/screens/main_screens/notifications/notifications.dart';
 import 'package:project_core/presentation/views/screens/main_screens/profile/settings/edit_profile.dart';
 import 'package:project_core/presentation/views/screens/main_screens/profile/user_profile.dart';
 import 'package:project_core/presentation/views/screens/main_screens/sign_in/sign_up.dart';
+import 'package:project_core/presentation/views/screens/main_screens/welcome_screen/welcome_screen.dart';
 import '../../main.dart';
 import '../../presentation/views/dummy_screen.dart';
 import '../../presentation/views/screens/main_screens/main_screen.dart';
@@ -34,6 +35,11 @@ final router = GoRouter(
     // ),
 
     /// added screens for split app
+    GoRoute(
+      name: WelcomeScreen.routeName,
+      path: '/${WelcomeScreen.routeName}',
+      builder: (context, state) => const WelcomeScreen(),
+    ),
     GoRoute(
       name: LoginScreen.routeName,
       path: '/${LoginScreen.routeName}',

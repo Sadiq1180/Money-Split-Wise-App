@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/login_screen.dart';
+import 'package:project_core/presentation/views/screens/main_screens/welcome_screen/welcome_screen.dart';
 import 'package:project_core/shared/shared.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'di/di.dart';
@@ -63,8 +64,8 @@ class TopScreen extends ConsumerWidget {
                 // const SignInScreen() : const SplashScreen(),
                 //   const DummyScreen()
                 // : const DummyScreen(),
-                const LoginScreen()
-              : const LoginScreen(),
+                const WelcomeScreen()
+              : const WelcomeScreen(),
           error: (_, __) => const SplashScreen(),
           loading: () => const SplashScreen(),
         );
