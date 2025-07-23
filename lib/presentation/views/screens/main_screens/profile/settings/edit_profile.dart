@@ -19,7 +19,7 @@ class EditProfile extends StatelessWidget {
     final TextEditingController emailController = TextEditingController();
 
     return Scaffold(
-      backgroundColor: AppColors.darkerGrey,
+      backgroundColor: AppColors.dark,
       body: KeyboardAware(
         child: SafeArea(
           child: SingleChildScrollView(
@@ -67,14 +67,14 @@ class EditProfile extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(45),
                           child: Image.asset(
-                            AppAssets.appLogo,
+                            AppAssets.person3,
                             width: 80,
                             height: 80,
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                      //  Edit Icon Positioned
+                      //  Edit Icon
                       Positioned(
                         bottom: 0,
                         right: 0,
@@ -84,6 +84,7 @@ class EditProfile extends StatelessWidget {
                             shape: BoxShape.circle,
                             color: Colors.amber,
                           ),
+
                           child: Icon(
                             Icons.edit,
                             size: 16,

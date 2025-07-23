@@ -18,7 +18,7 @@ class SignUpScreen extends StatelessWidget {
     final TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
-      backgroundColor: AppColors.darkerGrey,
+      backgroundColor: AppColors.dark,
       body: KeyboardAware(
         child: SafeArea(
           child: SingleChildScrollView(

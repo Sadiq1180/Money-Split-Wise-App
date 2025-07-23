@@ -83,6 +83,8 @@ class _DummyScreenState extends ConsumerState<DummyScreen> {
           Expanded(
             child: Consumer(
               builder: (context, ref, child) {
+                //instead of using full dummy Provider use .select for the specific field
+                // var userRes2 =ref.watch(dummyProvider).userRes;
                 var userRes = ref.watch(
                   dummyProvider.select((value) => value.userRes),
                 );
@@ -96,6 +98,10 @@ class _DummyScreenState extends ConsumerState<DummyScreen> {
                       itemBuilder: (BuildContext context, int index) {
                         Data data = dummyData.data![index];
                         return ListTile(
+                          onTap: () {
+                            /// also in onTap uses only ref.read
+                            var userRes2 = ref.read(dummyProvider).userRes;
+                          },
                           // leading: CircleAvatar(
                           //     backgroundImage:
                           //         NetworkImage(data.thumbnailUrl ?? '')),

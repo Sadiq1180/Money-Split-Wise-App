@@ -48,7 +48,6 @@ dependencies:
   loader_overlay: ^5.0.0
   font_awesome_flutter: ^10.8.0
   flutter_svg: ^2.2.0
-  image_picker: ^1.1.2
   
 
 
