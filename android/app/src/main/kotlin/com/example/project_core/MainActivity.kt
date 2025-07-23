@@ -1,4 +1,4 @@
-package com.example.project_core
+package com.example.splitwisee
 
 import io.flutter.embedding.android.FlutterActivity
 

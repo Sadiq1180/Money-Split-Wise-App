@@ -22,6 +22,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
     HomePage(),
     FriendsAndGroup(),
     // InsightsScreen(),
+    Container(),
     UserProfile(),
   ];
 
