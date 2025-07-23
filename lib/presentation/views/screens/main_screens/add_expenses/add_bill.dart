@@ -18,6 +18,8 @@ class _AddBillState extends State<AddBill> {
   final TextEditingController _dateAndController = TextEditingController();
   final TextEditingController _notesController = TextEditingController();
   final TextEditingController _amountController = TextEditingController();
+  final TextEditingController _descController = TextEditingController();
+  final TextEditingController _priceController = TextEditingController();
 
   @override
   void dispose() {
@@ -68,6 +70,7 @@ class _AddBillState extends State<AddBill> {
                     groupName: "Group Name",
                     groupImage: Icon(Icons.group, color: Colors.grey[300]),
                   ),
+                  20.spaceY,
                 ],
               ),
             ),
