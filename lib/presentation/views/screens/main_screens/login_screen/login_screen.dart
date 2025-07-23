@@ -8,6 +8,7 @@ import 'package:project_core/presentation/views/screens/main_screens/login_scree
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/remember_and_forgot_row.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/social_buttons.dart';
 import 'package:project_core/presentation/views/screens/main_screens/main_screen.dart';
+import 'package:project_core/presentation/widgets/rich_text_button.dart';
 import 'package:project_core/shared/shared.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -69,33 +70,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
         ),
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              text: "Don't have an account? ",
-              style: AppTextstyle.bodyTextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                color: context.theme.textTheme.bodyMedium!.color!,
-              ),
-              children: [
-                TextSpan(
-                  text: 'Sign Up',
-                  style: AppTextstyle.bodyTextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.secondary,
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      Navigation.pushNamed(SignUpScreen.routeName);
-                    },
-                ),
-              ],
-            ),
-          ),
+        bottomNavigationBar: BottomTextAction(
+          prefixText: "Don't have an account? ",
+          actionText: "Sign up",
+          onTap: () {
+            Navigation.pushNamed(SignUpScreen.routeName);
+          },
         ),
       ),
     );

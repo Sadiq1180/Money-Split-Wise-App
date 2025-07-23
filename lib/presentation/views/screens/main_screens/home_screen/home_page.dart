@@ -33,6 +33,7 @@ class HomePage extends StatelessWidget {
                 TitleWithOptionalButton(
                   title: "Recent Bills",
                   buttonColor: AppColors.darkerGrey,
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                   onTap: () {
                     //navigation to add bill screen
                     Navigation.pushNamed(AddBill.routeName);
@@ -45,9 +46,10 @@ class HomePage extends StatelessWidget {
                 /// recent Splinters
                 TitleWithOptionalButton(
                   title: "Recent Splinters",
-                  showButton: false,
+                  showButton: true,
                   showIcon: false,
                   buttonText: "View All",
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                 ),
 
                 ///Splinters profile
@@ -75,9 +77,10 @@ class HomePage extends StatelessWidget {
                 /// All transactions
                 TitleWithOptionalButton(
                   title: "All Transactions",
-                  showButton: false,
+                  showButton: true,
                   showIcon: false,
                   buttonText: "View All",
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                 ),
                 // all transactyions
                 AllTransactions(

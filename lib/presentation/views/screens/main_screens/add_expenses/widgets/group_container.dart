@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class GroupContainer extends StatelessWidget {
-  final String groupName;
+  final String? groupName;
+  final String? suffixText;
   final Widget? groupImage;
   final double imageSize;
   final VoidCallback? onTap;
 
   const GroupContainer({
     Key? key,
-    required this.groupName,
+    this.groupName,
+    this.suffixText,
     this.groupImage,
     this.imageSize = 36.0,
     this.onTap,
@@ -17,60 +19,61 @@ class GroupContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 16.0),
+      height: 50,
+      padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
-        color: Colors.grey[800],
+        color: Colors.grey[850],
         border: Border.all(color: Colors.grey[600]!, width: 1.0),
         borderRadius: BorderRadius.circular(12.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-          ),
-        ],
       ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: onTap,
-          borderRadius: BorderRadius.circular(12.0),
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
-              children: [
-                Container(
-                  width: imageSize,
-                  height: imageSize,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[700],
-                    borderRadius: BorderRadius.circular(8.0),
-                    border: Border.all(color: Colors.grey[600]!, width: 1.0),
-                  ),
-                  child: Center(
-                    child:
-                        groupImage ??
-                        Icon(
-                          Icons.group,
-                          color: Colors.grey[400],
-                          size: imageSize * 0.6, // Icon scaled to container
-                        ),
-                  ),
-                ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  child: Text(
-                    groupName,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12.0),
+        onTap: onTap,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            if (groupImage != null)
+              Row(
+                children: [
+                  Container(
+                    width: imageSize,
+                    height: imageSize,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      border: Border.all(color: Colors.grey[500]!),
                     ),
+                    child: Center(child: groupImage),
                   ),
+                  const SizedBox(width: 14.0),
+                ],
+              ),
+            Expanded(
+              child: Text.rich(
+                TextSpan(
+                  text: groupName,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  children: suffixText != null
+                      ? [
+                          TextSpan(
+                            text: '  ($suffixText)',
+                            style: TextStyle(
+                              color: Colors.grey[400],
+                              fontSize: 14,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                        ]
+                      : [],
                 ),
-              ],
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

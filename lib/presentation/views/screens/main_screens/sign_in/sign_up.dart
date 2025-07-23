@@ -4,6 +4,7 @@ import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/app_header.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/social_buttons.dart';
 import 'package:project_core/presentation/widgets/custom_label_field.dart';
+import 'package:project_core/presentation/widgets/rich_text_button.dart';
 import 'package:project_core/shared/constants/app_assets.dart';
 import 'package:project_core/shared/constants/app_colors.dart';
 import 'package:project_core/shared/constants/app_textstyle.dart';
@@ -68,34 +69,12 @@ class SignUpScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            text: "Already have an account? ",
-            style: AppTextstyle.bodyTextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: context.theme.textTheme.bodyMedium!.color!,
-            ),
-            children: [
-              TextSpan(
-                text: 'Sign In',
-                style: AppTextstyle.bodyTextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.secondary,
-                ),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    Navigation.pop(rootNavigator: false);
-                    // Navigation.pushNamed(SignUpScreen.routeName);
-                  },
-              ),
-            ],
-          ),
-        ),
+      bottomNavigationBar: BottomTextAction(
+        prefixText: "Already have an account? ",
+        actionText: "Sign In",
+        onTap: () {
+          Navigation.pop(rootNavigator: false);
+        },
       ),
     );
   }
