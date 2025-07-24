@@ -21,7 +21,7 @@ class UserCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 12.0),
       child: Container(
         height: 60,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           color: Colors.grey[850],
           border: Border.all(color: Colors.grey[600]!, width: 1),
@@ -30,8 +30,8 @@ class UserCard extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              width: 36,
-              height: 36,
+              width: 50,
+              height: 50,
               decoration: BoxDecoration(
                 color: Colors.grey[700],
                 borderRadius: BorderRadius.circular(8),

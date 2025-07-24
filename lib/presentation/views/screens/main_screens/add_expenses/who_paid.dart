@@ -91,9 +91,8 @@ class _WhoPaidState extends State<WhoPaid> {
                           ],
                         ),
                 ),
-                16.spaceY,
                 Divider(thickness: 1, color: Colors.grey[700]),
-                12.spaceY,
+                // 12.spaceY,
                 Center(
                   child: Column(
                     children: [
