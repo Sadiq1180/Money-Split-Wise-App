@@ -8,7 +8,7 @@ class GroupContainer extends StatelessWidget {
   final double imageSize;
   final VoidCallback? onTap;
   final Color? borderColor;
-  final IconData? rightIcon;
+  final Widget? trailing;
 
   const GroupContainer({
     Key? key,
@@ -19,7 +19,7 @@ class GroupContainer extends StatelessWidget {
     this.imageSize = 36.0,
     this.onTap,
     this.borderColor,
-    this.rightIcon,
+    this.trailing,
   }) : super(key: key);
 
   @override
@@ -92,10 +92,10 @@ class GroupContainer extends StatelessWidget {
                 ],
               ),
             ),
-            if (rightIcon != null)
+            if (trailing != null)
               Padding(
                 padding: const EdgeInsets.only(left: 12.0),
-                child: Icon(rightIcon, color: Colors.white, size: 20),
+                child: trailing!,
               ),
           ],
         ),

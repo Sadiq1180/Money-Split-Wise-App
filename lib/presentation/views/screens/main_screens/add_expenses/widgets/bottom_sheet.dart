@@ -22,6 +22,7 @@ void showSplitOptions(BuildContext context) {
             final selected = ref.watch(splitOptionProvider);
             Widget categories(String name, String desc, IconData icon) {
               return GroupContainer(
+                imageSize: 50,
                 groupName: name,
                 description: desc,
                 groupImage: Icon(icon, color: Colors.white),
