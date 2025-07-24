@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/bottom_sheet.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/group_container.dart';
 import 'package:project_core/presentation/widgets/custom_title.dart';
 import 'package:project_core/shared/constants/app_colors.dart';
@@ -20,12 +21,16 @@ class AdjustSplit extends StatelessWidget {
               CustomTitle(title: "Adjust Split"),
               20.spaceY,
               GroupContainer(
+                rightIcon: Icons.chevron_right_sharp,
                 groupImage: Icon(
                   Icons.view_agenda_outlined,
                   color: Colors.white,
                 ),
                 groupName: "Equally",
                 description: "Everyone will equal Share ",
+                onTap: () {
+                  showSplitOptions(context);
+                },
               ),
             ],
           ),

@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class GroupContainer extends StatelessWidget {
   final String? groupName;
   final String? suffixText;
-  final String? description; // <- New optional description
+  final String? description;
   final Widget? groupImage;
   final double imageSize;
   final VoidCallback? onTap;
+  final Color? borderColor;
+  final IconData? rightIcon;
 
   const GroupContainer({
     Key? key,
@@ -16,18 +18,18 @@ class GroupContainer extends StatelessWidget {
     this.groupImage,
     this.imageSize = 36.0,
     this.onTap,
+    this.borderColor,
+    this.rightIcon,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: description != null
-          ? 70
-          : 50, // Adjust height based on description
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      height: description != null ? 70 : 50,
+      padding: const EdgeInsets.symmetric(horizontal: 6),
       decoration: BoxDecoration(
         color: Colors.grey[850],
-        border: Border.all(color: Colors.grey[600]!, width: 1.0),
+        border: Border.all(color: borderColor ?? Colors.grey[600]!, width: 1.5),
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: InkWell(
@@ -90,6 +92,11 @@ class GroupContainer extends StatelessWidget {
                 ],
               ),
             ),
+            if (rightIcon != null)
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: Icon(rightIcon, color: Colors.white, size: 20),
+              ),
           ],
         ),
       ),

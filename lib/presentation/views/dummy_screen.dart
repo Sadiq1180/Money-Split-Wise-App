@@ -100,7 +100,7 @@ class _DummyScreenState extends ConsumerState<DummyScreen> {
                         return ListTile(
                           onTap: () {
                             /// also in onTap uses only ref.read
-                            var userRes2 = ref.read(dummyProvider).userRes;
+                            // var userRes2 = ref.read(dummyProvider).userRes;
                           },
                           // leading: CircleAvatar(
                           //     backgroundImage:
