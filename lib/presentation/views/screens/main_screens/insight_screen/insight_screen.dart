@@ -16,7 +16,6 @@ class InsightScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildSectionTitle('Summary'),
             const SizedBox(height: 10),
             _buildSummaryCard(
               title: 'Total Spending',
@@ -34,17 +33,6 @@ class InsightScreen extends StatelessWidget {
             const SizedBox(height: 20),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildSectionTitle(String title) {
-    return Text(
-      title,
-      style: const TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-        color: Colors.deepPurple,
       ),
     );
   }

@@ -9,7 +9,8 @@ class TitleWithOptionalButton extends StatelessWidget {
   final VoidCallback? onTap;
   final Color? buttonColor;
   final bool showIcon;
-  final TextStyle? buttonTextStyle; // ✅ New property
+  final TextStyle? buttonTextStyle;
+  final EdgeInsetsGeometry? padding;
 
   const TitleWithOptionalButton({
     super.key,
@@ -20,17 +21,17 @@ class TitleWithOptionalButton extends StatelessWidget {
     this.onTap,
     this.buttonColor,
     this.showIcon = true,
-    this.buttonTextStyle, // ✅ Constructor argument
+    this.buttonTextStyle,
+    this.padding,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
+      padding: padding ?? EdgeInsets.zero,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Left: Title
           Text(
             title,
             style: const TextStyle(
@@ -39,8 +40,6 @@ class TitleWithOptionalButton extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-
-          // Right: Optional Button
           if (showButton)
             GestureDetector(
               onTap: onTap,
