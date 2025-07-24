@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/social_buttons.dart';
@@ -7,7 +5,6 @@ import 'package:project_core/presentation/widgets/custom_label_field.dart';
 import 'package:project_core/shared/constants/app_assets.dart';
 import 'package:project_core/shared/constants/app_colors.dart';
 import 'package:project_core/shared/extensions/sized_box.dart';
-import 'package:project_core/shared/navigation/navigation.dart';
 
 class EditProfile extends StatelessWidget {
   static const String routeName = "Edit_Profile";

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:project_core/presentation/views/screens/main_screens/friends_group/widgets/my_groups.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/widgets/home_header.dart';
 import 'package:project_core/presentation/views/screens/main_screens/profile/settings/edit_profile.dart';
@@ -7,18 +8,16 @@ import 'package:project_core/shared/constants/app_colors.dart';
 import 'package:project_core/shared/extensions/sized_box.dart';
 import 'package:project_core/shared/navigation/navigation.dart';
 
-class UserProfile extends StatefulWidget {
+final darkModeProvider = StateProvider<bool>((ref) => false);
+
+class UserProfile extends ConsumerWidget {
   static const String routeName = "User_profile";
   const UserProfile({super.key});
 
   @override
-  State<UserProfile> createState() => _UserProfileState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDarkMode = ref.watch(darkModeProvider);
 
-class _UserProfileState extends State<UserProfile> {
-  bool isDarkMode = true;
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.appBackground,
       body: SingleChildScrollView(
@@ -30,14 +29,13 @@ class _UserProfileState extends State<UserProfile> {
               children: [
                 Text(
                   "My Profile",
-                  textAlign: TextAlign.left,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                20.spaceY,
+                10.spaceY,
                 HomeGreeting(
                   rightIcon: Icons.login,
                   profileImage: AppAssets.person3,
@@ -46,7 +44,6 @@ class _UserProfileState extends State<UserProfile> {
                   onIconTap: () {},
                 ),
                 20.spaceY,
-                // Settings header
                 const Text(
                   "Settings",
                   style: TextStyle(
@@ -56,7 +53,6 @@ class _UserProfileState extends State<UserProfile> {
                   ),
                 ),
                 10.spaceY,
-
                 MyGroups(
                   title: "Edit Profile",
                   icon: Icons.person_2_outlined,
@@ -76,16 +72,17 @@ class _UserProfileState extends State<UserProfile> {
                   title: "Premium Membership",
                   icon: Icons.workspace_premium_outlined,
                 ),
-                // 10.spaceY,
+
+                /// dark mode with switch bitton
                 MyGroups(
                   icon: Icons.nightlight_outlined,
                   title: "Dark mode",
                   trailingWidget: Switch(
                     value: isDarkMode,
-                    onChanged: (val) => setState(() => isDarkMode = val),
-                    thumbColor: MaterialStateProperty.all(
-                      Colors.white,
-                    ), // white circle
+                    onChanged: (val) {
+                      ref.read(darkModeProvider.notifier).state = val;
+                    },
+                    // thumbColor: MaterialStateProperty.all(Colors.white),
                     trackColor: MaterialStateProperty.resolveWith<Color>(
                       (states) => states.contains(MaterialState.selected)
                           ? Colors.green

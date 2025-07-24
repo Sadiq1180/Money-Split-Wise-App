@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/who_paid.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/adjust_split.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/bottom_icons.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/group_container.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/price_and_description.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/widgets/recent_bills.dart';
@@ -11,9 +12,7 @@ import 'package:project_core/shared/shared.dart';
 
 class AddBill extends StatefulWidget {
   static const String routeName = "Add_Bill";
-
   const AddBill({super.key});
-
   @override
   State<AddBill> createState() => _AddBillState();
 }
@@ -21,7 +20,6 @@ class AddBill extends StatefulWidget {
 class _AddBillState extends State<AddBill> {
   final TextEditingController _descController = TextEditingController();
   final TextEditingController _priceController = TextEditingController();
-
   @override
   void dispose() {
     _descController.dispose();
@@ -46,22 +44,22 @@ class _AddBillState extends State<AddBill> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomTitle(title: "Add Expenses"),
-                      24.spaceY,
+                      const CustomTitle(title: "Add Expenses"),
+                      20.spaceY,
                       GroupContainer(
                         groupName: "Group Name",
                         groupImage: Icon(Icons.group, color: Colors.grey[300]),
                       ),
                       20.spaceY,
                       BorderedInputField(
-                        hintText: "Description",
-                        icon: Icons.menu_book_outlined,
+                        hintText: "Enter a Description",
+                        icon: Icons.text_snippet,
                         controller: _descController,
                       ),
                       20.spaceY,
                       BorderedInputField(
                         hintText: "\$ 0.00",
-                        icon: Icons.money,
+                        icon: Icons.attach_money_sharp,
                         controller: _priceController,
                       ),
                       20.spaceY,
@@ -70,11 +68,12 @@ class _AddBillState extends State<AddBill> {
                         showButton: true,
                         buttonText: "Change",
                         showIcon: false,
-                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        padding: EdgeInsets.zero,
                         onTap: () {
                           Navigation.pushNamed(WhoPaid.routeName);
                         },
                       ),
+                      10.spaceY,
                       GroupContainer(
                         groupName: "Name",
                         suffixText: "you",
@@ -83,16 +82,20 @@ class _AddBillState extends State<AddBill> {
                           color: Colors.grey[300],
                         ),
                       ),
+                      20.spaceY,
+
                       TitleWithOptionalButton(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
                         title: "Split",
                         showButton: true,
                         buttonText: "Change",
                         showIcon: false,
+                        padding: EdgeInsets.zero,
                         onTap: () {
                           Navigation.pushNamed(AdjustSplit.routeName);
                         },
                       ),
+                      10.spaceY,
+
                       GroupContainer(
                         groupName: "Equally",
                         groupImage: Icon(
@@ -105,33 +108,15 @@ class _AddBillState extends State<AddBill> {
                 ),
               ),
 
-              // Bottom Buttons
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Icon(
-                          Icons.calendar_month_outlined,
-                          color: Colors.white,
-                        ),
-                        SizedBox(width: 16),
-                        Icon(Icons.camera_alt_outlined, color: Colors.white),
-                        SizedBox(width: 16),
-                        Icon(Icons.edit_calendar_outlined, color: Colors.white),
-                      ],
-                    ),
-                    10.spaceY,
-                  ],
-                ),
-              ),
+              /// Bottom icons row
+              BottomIcons(),
             ],
           ),
         ),
+
+        /// Bottom button
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          padding: const EdgeInsets.only(bottom: 20, right: 15, left: 15),
           child: SizedBox(
             width: double.infinity,
             child: CustomElevatedButton(

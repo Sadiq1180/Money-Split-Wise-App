@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:project_core/presentation/base_widgets/app_bottom_padding.dart';
 import 'package:project_core/shared/constants/app_colors.dart';
 import 'package:project_core/shared/constants/app_textstyle.dart';
 import 'package:project_core/shared/shared.dart';
@@ -18,8 +19,7 @@ class BottomTextAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+    return AppBottomPadding(
       child: RichText(
         textAlign: TextAlign.center,
         text: TextSpan(

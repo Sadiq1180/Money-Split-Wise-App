@@ -74,7 +74,6 @@ class _WhoPaidState extends State<WhoPaid> {
                       : Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            16.spaceY,
                             Expanded(
                               child: ListView.builder(
                                 itemCount: users.length,
@@ -120,7 +119,7 @@ class _WhoPaidState extends State<WhoPaid> {
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+        padding: const EdgeInsets.only(bottom: 20, right: 15, left: 15),
         child: SizedBox(
           width: double.infinity,
           child: CustomElevatedButton(

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/views/screens/main_screens/notifications/notifications.dart';
-import 'package:project_core/shared/constants/app_assets.dart';
-import 'package:project_core/shared/constants/app_colors.dart';
 import 'package:project_core/shared/shared.dart';
 
 class HomeGreeting extends StatelessWidget implements PreferredSizeWidget {
@@ -26,7 +24,7 @@ class HomeGreeting extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+        padding: const EdgeInsets.only(top: 10, right: 5, left: 5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
