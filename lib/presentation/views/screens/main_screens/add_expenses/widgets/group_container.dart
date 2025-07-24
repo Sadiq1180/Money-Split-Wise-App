@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class GroupContainer extends StatelessWidget {
   final String? groupName;
   final String? suffixText;
+  final String? description; // <- New optional description
   final Widget? groupImage;
   final double imageSize;
   final VoidCallback? onTap;
@@ -11,6 +12,7 @@ class GroupContainer extends StatelessWidget {
     Key? key,
     this.groupName,
     this.suffixText,
+    this.description,
     this.groupImage,
     this.imageSize = 36.0,
     this.onTap,
@@ -19,7 +21,9 @@ class GroupContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: description != null
+          ? 70
+          : 50, // Adjust height based on description
       padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
         color: Colors.grey[850],
@@ -48,29 +52,42 @@ class GroupContainer extends StatelessWidget {
                 ],
               ),
             Expanded(
-              child: Text.rich(
-                TextSpan(
-                  text: groupName,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text.rich(
+                    TextSpan(
+                      text: groupName ?? '',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      children: suffixText != null
+                          ? [
+                              TextSpan(
+                                text: '  ($suffixText)',
+                                style: TextStyle(
+                                  color: Colors.grey[400],
+                                  fontSize: 14,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                            ]
+                          : [],
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  children: suffixText != null
-                      ? [
-                          TextSpan(
-                            text: '  ($suffixText)',
-                            style: TextStyle(
-                              color: Colors.grey[400],
-                              fontSize: 14,
-                              fontStyle: FontStyle.italic,
-                            ),
-                          ),
-                        ]
-                      : [],
-                ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+                  if (description != null)
+                    Text(
+                      description!,
+                      style: TextStyle(color: Colors.grey[400], fontSize: 13),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                ],
               ),
             ),
           ],

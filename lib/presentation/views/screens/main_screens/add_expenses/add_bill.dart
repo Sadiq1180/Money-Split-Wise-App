@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/who_paid.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/adjust_split.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/group_container.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/price_and_description.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/widgets/recent_bills.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/social_buttons.dart';
 import 'package:project_core/presentation/widgets/custom_title.dart';
-import 'package:project_core/shared/constants/app_colors.dart';
-import 'package:project_core/shared/extensions/sized_box.dart';
 import 'package:project_core/shared/shared.dart';
 
 class AddBill extends StatefulWidget {
@@ -90,6 +89,9 @@ class _AddBillState extends State<AddBill> {
                         showButton: true,
                         buttonText: "Change",
                         showIcon: false,
+                        onTap: () {
+                          Navigation.pushNamed(AdjustSplit.routeName);
+                        },
                       ),
                       GroupContainer(
                         groupName: "Equally",
@@ -121,20 +123,22 @@ class _AddBillState extends State<AddBill> {
                         Icon(Icons.edit_calendar_outlined, color: Colors.white),
                       ],
                     ),
-                    16.spaceY,
-                    SizedBox(
-                      width: double.infinity,
-                      child: CustomElevatedButton(
-                        onPressed: () {},
-                        isOutlined: false,
-                        text: "Done",
-                      ),
-                    ),
                     10.spaceY,
                   ],
                 ),
               ),
             ],
+          ),
+        ),
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          child: SizedBox(
+            width: double.infinity,
+            child: CustomElevatedButton(
+              onPressed: () {},
+              isOutlined: false,
+              text: "Done",
+            ),
           ),
         ),
       ),

@@ -114,17 +114,19 @@ class _WhoPaidState extends State<WhoPaid> {
                     ],
                   ),
                 ),
-                20.spaceY,
-                SizedBox(
-                  width: double.infinity,
-                  child: CustomElevatedButton(
-                    onPressed: () {},
-                    isOutlined: false,
-                    text: "Done",
-                  ),
-                ),
               ],
             ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+        child: SizedBox(
+          width: double.infinity,
+          child: CustomElevatedButton(
+            onPressed: () {},
+            isOutlined: false,
+            text: "Done",
           ),
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/who_paid.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/adjust_split.dart';
 import 'package:project_core/presentation/views/screens/main_screens/friends_group/friends_group.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/add_bill.dart';
 import 'package:project_core/presentation/views/screens/main_screens/insight_screen/insight_screen.dart';
@@ -91,6 +92,11 @@ final router = GoRouter(
       name: WhoPaid.routeName,
       path: '/${WhoPaid.routeName}',
       builder: (context, state) => const WhoPaid(),
+    ),
+    GoRoute(
+      name: AdjustSplit.routeName,
+      path: '/${AdjustSplit.routeName}',
+      builder: (context, state) => const AdjustSplit(),
     ),
   ],
 );
