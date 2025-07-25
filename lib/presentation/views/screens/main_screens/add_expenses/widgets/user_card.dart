@@ -6,12 +6,14 @@ class UserCard extends StatelessWidget {
   final String email;
   final bool isMultipleMode;
   final TextEditingController? controller;
+  final Widget? trailing;
 
   const UserCard({
     required this.name,
     required this.email,
     this.isMultipleMode = false,
     this.controller,
+    this.trailing,
     super.key,
   });
 
@@ -29,6 +31,7 @@ class UserCard extends StatelessWidget {
         ),
         child: Row(
           children: [
+            // Profile Placeholder Box
             Container(
               width: 50,
               height: 50,
@@ -39,6 +42,7 @@ class UserCard extends StatelessWidget {
               ),
             ),
             14.spaceX,
+            // Name + Email Column
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,35 +64,41 @@ class UserCard extends StatelessWidget {
                 ],
               ),
             ),
-            isMultipleMode
-                ? SizedBox(
-                    width: 60,
-                    height: 32,
-                    child: TextField(
-                      cursorColor: const Color(0xFFD4AF37),
-                      controller: controller,
-                      keyboardType: TextInputType.number,
-                      style: const TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 4,
-                        ),
-                        hintText: '0',
-                        hintStyle: TextStyle(color: Colors.grey[500]),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(
-                            color: const Color(0xFFD4AF37),
+            // Trailing section
+            trailing ??
+                (isMultipleMode
+                    ? SizedBox(
+                        width: 60,
+                        height: 32,
+                        child: TextField(
+                          cursorColor: const Color(0xFFD4AF37),
+                          controller: controller,
+                          keyboardType: TextInputType.number,
+                          style: const TextStyle(color: Colors.white),
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 4,
+                            ),
+                            hintText: '0',
+                            hintStyle: TextStyle(color: Colors.grey[500]),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: const BorderSide(
+                                color: Color(0xFFD4AF37),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                  )
-                : Icon(Icons.check, color: Color(0xFFFFB347), size: 24),
+                      )
+                    : const Icon(
+                        Icons.check_circle_outline_outlined,
+                        color: Color(0xFFFFB347),
+                        size: 24,
+                      )),
           ],
         ),
       ),

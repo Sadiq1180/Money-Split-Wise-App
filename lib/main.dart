@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:project_core/presentation/views/screens/main_screens/welcome_screen/welcome_screen.dart';
@@ -13,7 +14,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppLocal.ins.initStorage();
   await DI.initDI();
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(
+    const ProviderScope(
+      // to view the date and time area
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light,
+        child: MyApp(),
+      ),
+    ),
+  );
 }
 
 class MyApp extends ConsumerWidget {
