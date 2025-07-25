@@ -32,7 +32,7 @@ class SplitEqually extends StatelessWidget {
           groupImage: Icon(Icons.person, color: Colors.white, size: 30),
           trailing: Icon(Icons.check_box, color: Colors.amber),
         ),
-        200.spaceY,
+        40.spaceY,
         const Divider(color: Colors.white),
         Center(
           child: Column(

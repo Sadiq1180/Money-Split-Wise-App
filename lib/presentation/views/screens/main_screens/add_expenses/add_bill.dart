@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/who_paid.dart';
-import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/adjust_split.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/adjust_split.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/bottom_icons.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/group_container.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/price_and_description.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/with_you_and.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/widgets/recent_bills.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/social_buttons.dart';
 import 'package:project_core/presentation/widgets/custom_title.dart';
@@ -46,23 +47,43 @@ class _AddBillState extends State<AddBill> {
                     children: [
                       const CustomTitle(title: "Add Expenses"),
                       20.spaceY,
+                      TitleWithOptionalButton(
+                        title: "with you and:",
+                        showIcon: false,
+                        buttonText: "Add",
+                        onTap: () {
+                          Navigation.pushNamed(WithYouAnd.routeName);
+                        },
+                      ),
+
                       GroupContainer(
                         groupName: "Group Name",
                         groupImage: Icon(Icons.group, color: Colors.grey[300]),
+                        trailing: Icon(Icons.close, color: Colors.grey),
+                        suffixText: "Group",
                       ),
                       20.spaceY,
+                      GroupContainer(
+                        groupName: "Name",
+                        groupImage: Icon(Icons.person, color: Colors.grey[300]),
+                        trailing: Icon(Icons.close, color: Colors.grey),
+                      ),
+                      20.spaceY,
+                      //descriiption field
                       BorderedInputField(
                         hintText: "Enter a Description",
                         icon: Icons.text_snippet,
                         controller: _descController,
                       ),
                       20.spaceY,
+                      //price field
                       BorderedInputField(
                         hintText: "\$ 0.00",
                         icon: Icons.attach_money_sharp,
                         controller: _priceController,
                       ),
                       20.spaceY,
+                      //paid by and change row // Navigated to Who paid Scren
                       TitleWithOptionalButton(
                         title: "Paid by",
                         showButton: true,
@@ -83,7 +104,7 @@ class _AddBillState extends State<AddBill> {
                         ),
                       ),
                       20.spaceY,
-
+                      //split and change row // Navigated to adjust split screen
                       TitleWithOptionalButton(
                         title: "Split",
                         showButton: true,

@@ -3,10 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/bottom_sheet.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/group_container.dart';
-import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/splits_views/equally_split.dart';
-import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/splits_views/percentage_split.dart';
-import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/splits_views/share_split.dart';
-import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/splits_views/unequally_split.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/splits_types/adjustment_split.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/splits_types/equally_split.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/splits_types/percentage_split.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/splits_types/share_split.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/splits_types/unequally_split.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/social_buttons.dart';
 import 'package:project_core/presentation/widgets/custom_title.dart';
 import 'package:project_core/shared/constants/app_colors.dart';
@@ -28,7 +29,7 @@ class AdjustSplit extends ConsumerWidget {
       case "By Shares":
         return ShareSplit();
       case "By Adjustment":
-        return AdjustSplit();
+        return AdjustmentSplit();
       default:
         return Text(
           "Coming soon for $selected...",
@@ -43,8 +44,8 @@ class AdjustSplit extends ConsumerWidget {
 
     return Scaffold(
       backgroundColor: AppColors.dark,
-      body: KeyboardAware(
-        child: SafeArea(
+      body: SafeArea(
+        child: KeyboardAware(
           child: Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 18.0,
