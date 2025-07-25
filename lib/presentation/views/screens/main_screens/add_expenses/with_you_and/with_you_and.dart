@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/custom_search_bar.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/group_container.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/with_you_and/add_members.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/with_you_and/add_new_group.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/widgets/recent_bills.dart';
 import 'package:project_core/presentation/widgets/custom_title.dart';
 import 'package:project_core/shared/shared.dart';
@@ -31,7 +33,10 @@ class WithYouAnd extends StatelessWidget {
               children: [
                 CustomTitle(title: "With you and"),
                 10.spaceY,
-                CustomSearchBar(controller: TextEditingController()),
+                CustomSearchBar(
+                  controller: TextEditingController(),
+                  borderColor: Colors.grey,
+                ),
                 20.spaceY,
 
                 Expanded(
@@ -41,7 +46,12 @@ class WithYouAnd extends StatelessWidget {
                         // Groups Section
                         TitleWithOptionalButton(
                           title: "Groups",
-                          showButton: false,
+                          showButton: true,
+                          buttonText: "Add new",
+                          showIcon: true,
+                          onTap: () {
+                            Navigation.pushNamed(AddNewGroup.routeName);
+                          },
                         ),
                         10.spaceY,
                         ListView.builder(
@@ -68,7 +78,12 @@ class WithYouAnd extends StatelessWidget {
                         // Friends Section
                         TitleWithOptionalButton(
                           title: "Friends",
-                          showButton: false,
+                          showButton: true,
+                          buttonText: "Add new",
+                          showIcon: true,
+                          onTap: () {
+                            Navigation.pushNamed(AddMembers.routeName);
+                          },
                         ),
                         10.spaceY,
                         ListView.builder(

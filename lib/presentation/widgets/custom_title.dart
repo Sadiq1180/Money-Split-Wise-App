@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 class CustomTitle extends StatelessWidget {
   final String title;
+  final Widget? trailing;
 
-  const CustomTitle({Key? key, required this.title}) : super(key: key);
+  const CustomTitle({Key? key, required this.title, this.trailing})
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +20,17 @@ class CustomTitle extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 10),
-        Text(
-          title,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
+        Expanded(
+          child: Text(
+            title,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
+        if (trailing != null) ...[const SizedBox(width: 10), trailing!],
       ],
     );
   }

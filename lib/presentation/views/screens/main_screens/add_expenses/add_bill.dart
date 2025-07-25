@@ -5,7 +5,7 @@ import 'package:project_core/presentation/views/screens/main_screens/add_expense
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/bottom_icons.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/group_container.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/price_and_description.dart';
-import 'package:project_core/presentation/views/screens/main_screens/add_expenses/with_you_and.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/with_you_and/with_you_and.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/widgets/recent_bills.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/social_buttons.dart';
 import 'package:project_core/presentation/widgets/custom_title.dart';

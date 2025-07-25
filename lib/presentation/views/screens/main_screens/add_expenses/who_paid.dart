@@ -68,6 +68,7 @@ class _WhoPaidState extends State<WhoPaid> {
                             return UserCard(
                               name: user['name']!,
                               email: user['email']!,
+                              trailing: Icon(Icons.check, color: Colors.amber),
                             );
                           },
                         )
