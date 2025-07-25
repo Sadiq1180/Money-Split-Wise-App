@@ -46,12 +46,12 @@ class WithYouAnd extends StatelessWidget {
                         // Groups Section
                         TitleWithOptionalButton(
                           title: "Groups",
-                          showButton: true,
-                          buttonText: "Add new",
-                          showIcon: true,
-                          onTap: () {
-                            Navigation.pushNamed(AddNewGroup.routeName);
-                          },
+                          showButton: false,
+                          // buttonText: "Add new",
+                          // showIcon: true,
+                          // onTap: () {
+                          //   Navigation.pushNamed(AddNewGroup.routeName);
+                          // },
                         ),
                         10.spaceY,
                         ListView.builder(
@@ -78,12 +78,12 @@ class WithYouAnd extends StatelessWidget {
                         // Friends Section
                         TitleWithOptionalButton(
                           title: "Friends",
-                          showButton: true,
-                          buttonText: "Add new",
-                          showIcon: true,
-                          onTap: () {
-                            Navigation.pushNamed(AddMembers.routeName);
-                          },
+                          showButton: false,
+                          // buttonText: "Add new",
+                          // showIcon: true,
+                          // onTap: () {
+                          //   Navigation.pushNamed(AddMembers.routeName);
+                          // },
                         ),
                         10.spaceY,
                         ListView.builder(
