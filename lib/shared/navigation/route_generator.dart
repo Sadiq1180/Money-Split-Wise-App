@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/who_paid.dart';
-import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/adjust_split.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/adjust_split.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/with_you_and.dart';
 import 'package:project_core/presentation/views/screens/main_screens/friends_group/friends_group.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/add_bill.dart';
 import 'package:project_core/presentation/views/screens/main_screens/insight_screen/insight_screen.dart';
@@ -36,7 +37,7 @@ final router = GoRouter(
     //   builder: (context, state) => const MainScreen(),
     // ),
 
-    /// added screens for split app
+    /// ADDED SCREEN FOR SPLIT APP
     GoRoute(
       name: WelcomeScreen.routeName,
       path: '/${WelcomeScreen.routeName}',
@@ -96,6 +97,11 @@ final router = GoRouter(
       name: AdjustSplit.routeName,
       path: '/${AdjustSplit.routeName}',
       builder: (context, state) => const AdjustSplit(),
+    ),
+    GoRoute(
+      name: WithYouAnd.routeName,
+      path: '/${WithYouAnd.routeName}',
+      builder: (context, state) => const WithYouAnd(),
     ),
   ],
 );

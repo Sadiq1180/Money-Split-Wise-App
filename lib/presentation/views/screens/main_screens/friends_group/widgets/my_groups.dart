@@ -9,7 +9,7 @@ class MyGroups extends StatelessWidget {
   final Color iconColor;
   final IconData rightIcon;
   final Widget? trailingWidget;
-  final VoidCallback? onTap; // <-- Added onTap
+  final VoidCallback? onTap;
 
   const MyGroups({
     Key? key,
@@ -20,7 +20,7 @@ class MyGroups extends StatelessWidget {
     this.iconColor = Colors.white,
     this.rightIcon = Icons.keyboard_arrow_right,
     this.trailingWidget,
-    this.onTap, // <-- Constructor
+    this.onTap,
   }) : super(key: key);
 
   @override

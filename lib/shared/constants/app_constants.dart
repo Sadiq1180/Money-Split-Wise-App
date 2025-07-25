@@ -10,6 +10,6 @@ enum Environment { development, staging, production }
 enum ResponseMode { mock, real }
 
 /// create for the bottom sheet in adjust split
-enum SplitCategory { equally, unequally, percentage, shares, custom }
+enum SplitCategory { equally, unequally, percentage, shares, adjustment }
 
 String localDataStorageEnabled = "localDataStorageEnabled";
