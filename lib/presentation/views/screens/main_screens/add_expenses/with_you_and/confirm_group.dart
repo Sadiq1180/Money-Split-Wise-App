@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/add_bill.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/with_you_and/add_members.dart';
 import 'package:project_core/presentation/views/screens/main_screens/add_expenses/with_you_and/widgets/image_container.dart';
 import 'package:project_core/presentation/views/screens/main_screens/login_screen/widgets/social_buttons.dart';
 import 'package:project_core/presentation/widgets/custom_title.dart';
@@ -56,7 +57,9 @@ class ConfirmGroup extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: CustomElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigation.pushNamed(AddMembers.routeName);
+                  },
                   isOutlined: false,
                   text: "Add Members",
                 ),

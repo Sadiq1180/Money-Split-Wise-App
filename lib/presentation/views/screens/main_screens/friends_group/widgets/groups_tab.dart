@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/with_you_and/add_new_group.dart';
 import 'package:project_core/presentation/views/screens/main_screens/friends_group/widgets/bill_split_card.dart';
 import 'package:project_core/presentation/views/screens/main_screens/friends_group/widgets/my_groups.dart';
 import 'package:project_core/presentation/views/screens/main_screens/home_screen/widgets/recent_bills.dart';
@@ -16,12 +17,16 @@ class GroupsTab extends StatelessWidget {
           10.spaceY,
           // my groups title
           TitleWithOptionalButton(
+            padding: EdgeInsets.only(left: 12, right: 10),
             title: "My Groups",
             buttonText: "Add new",
             buttonTextStyle: TextStyle(
               color: Colors.green,
               fontWeight: FontWeight.w500,
             ),
+            onTap: () {
+              Navigation.pushNamed(AddNewGroup.routeName);
+            },
           ),
           //my groups data
           MyGroups(
