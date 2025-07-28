@@ -17,7 +17,6 @@ class BottomIcons extends StatelessWidget {
               16.spaceX,
               Icon(Icons.camera_alt_outlined, color: Colors.white),
               16.spaceX,
-
               Icon(Icons.edit_calendar_outlined, color: Colors.white),
             ],
           ),
