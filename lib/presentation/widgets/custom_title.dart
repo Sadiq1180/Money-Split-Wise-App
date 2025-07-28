@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_core/shared/navigation/navigation.dart';
 
 class CustomTitle extends StatelessWidget {
   final String title;
@@ -11,14 +12,12 @@ class CustomTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(
+        IconButton(onPressed: ()=>Navigation.pop(), icon: const Icon(
             Icons.arrow_back_ios,
             color: Colors.white,
             size: 20,
-          ),
-        ),
+          ))
+      ,
         const SizedBox(width: 10),
         Expanded(
           child: Text(
