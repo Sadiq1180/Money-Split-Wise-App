@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:project_core/presentation/views/screens/friends_group/friends_group.dart';
 import 'package:project_core/presentation/views/screens/home_screen/home_page.dart';
 import 'package:project_core/presentation/views/screens/insight_screen/insight_screen.dart';
-import 'package:project_core/presentation/views/screens/profile/user_profile.dart';
+import 'package:project_core/presentation/views/screens/profile/user_profile_screen.dart';
 import 'package:project_core/presentation/widgets/custom_bottom_navigation.dart';
 
 import '../../../../providers/main_provider.dart';

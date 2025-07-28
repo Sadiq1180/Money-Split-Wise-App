@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_core/shared/constants/app_colors.dart';
 import 'package:project_core/shared/extensions/sized_box.dart';
 
 class UserCard extends StatelessWidget {
@@ -23,7 +24,7 @@ class UserCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 12.0),
       child: Container(
         height: 60,
-        padding: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         decoration: BoxDecoration(
           color: Colors.grey[850],
           border: Border.all(color: Colors.grey[600]!, width: 1),
@@ -84,6 +85,11 @@ class UserCard extends StatelessWidget {
                             hintStyle: TextStyle(color: Colors.grey[500]),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
+                            ),
+                            //changed field border color to grey
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: BorderSide(color: AppColors.darkGrey),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),

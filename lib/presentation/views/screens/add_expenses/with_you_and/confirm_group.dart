@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_core/presentation/views/screens/add_expenses/add_bill.dart';
+import 'package:project_core/presentation/views/screens/add_expenses/add_bill_screen.dart';
 import 'package:project_core/presentation/views/screens/add_expenses/with_you_and/add_members.dart';
 import 'package:project_core/presentation/views/screens/add_expenses/with_you_and/widgets/image_container.dart';
 import 'package:project_core/presentation/views/screens/onboarding_screens/widgets/social_buttons.dart';
@@ -39,12 +39,12 @@ class ConfirmGroup extends StatelessWidget {
 
               // Group Info
               Column(
-                children: const [
+                children: [
                   Text(
                     "Name of Group",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
-                  SizedBox(height: 4),
+                  4.spaceY,
                   Text(
                     "Group - 2 members",
                     style: TextStyle(color: Colors.white70, fontSize: 14),

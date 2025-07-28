@@ -30,18 +30,11 @@ class BorderedInputField extends StatelessWidget {
         Expanded(
           child: Container(
             height: 50,
-            alignment:
-                Alignment.centerLeft, // Changed from center to centerLeft
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-            ), // Increased from 12 to 16
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             decoration: BoxDecoration(
-              color: Colors
-                  .grey[850], // Added background color to match GroupContainer
-              border: Border.all(
-                color: Colors.grey[600]!,
-                width: 1.0,
-              ), // Consistent border
+              color: Colors.grey[850],
+              border: Border.all(color: Colors.grey[600]!, width: 1.0),
               borderRadius: BorderRadius.circular(12),
             ),
             child: TextField(

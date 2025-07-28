@@ -12,11 +12,12 @@ class BottomIcons extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
+            children: [
               Icon(Icons.calendar_month_outlined, color: Colors.white),
-              SizedBox(width: 16),
+              16.spaceX,
               Icon(Icons.camera_alt_outlined, color: Colors.white),
-              SizedBox(width: 16),
+              16.spaceX,
+
               Icon(Icons.edit_calendar_outlined, color: Colors.white),
             ],
           ),

@@ -33,7 +33,10 @@ class _FriendsAndGroupState extends State<FriendsAndGroup>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.dark,
-      appBar: FriendsListHeader(),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60),
+        child: SafeArea(child: FriendsListHeader()),
+      ),
       body: KeyboardAware(
         child: SafeArea(
           child: Column(
@@ -41,7 +44,7 @@ class _FriendsAndGroupState extends State<FriendsAndGroup>
               // Header
               // Padding(
               //   padding: const EdgeInsets.symmetric(horizontal: 4),
-              //   child: 
+              //   child:
               // ),
 
               // Tab Bar

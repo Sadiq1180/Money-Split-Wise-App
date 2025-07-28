@@ -4,6 +4,7 @@ import 'package:project_core/presentation/views/screens/add_expenses/with_you_an
 import 'package:project_core/presentation/views/screens/add_expenses/with_you_and/widgets/icon_label_box.dart';
 import 'package:project_core/presentation/views/screens/home_screen/widgets/recent_bills.dart';
 import 'package:project_core/presentation/views/screens/onboarding_screens/widgets/social_buttons.dart';
+import 'package:project_core/presentation/widgets/custom_label_field.dart';
 import 'package:project_core/presentation/widgets/custom_title.dart';
 import 'package:project_core/shared/shared.dart';
 
@@ -14,21 +15,27 @@ class AddNewGroup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomTitle(title: "Create Group"),
       backgroundColor: AppColors.dark,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 18.0),
           child: Column(
             children: [
-              CustomTitle(title: "Create Group"),
-              30.spaceY,
-              CustomSearchBar(
+              // CustomTitle(title: "Create Group"),
+              20.spaceY,
+              LabeledTextField(
+                label: "Group Name",
+                hint: "Group name",
                 controller: TextEditingController(),
-                hintText: "Group Name",
-                showIcon: false,
-                borderColor: Colors.grey,
               ),
-              40.spaceY,
+              // CustomSearchBar(
+              //   controller: TextEditingController(),
+              //   hintText: "Group Name",
+              //   showIcon: false,
+              //   borderColor: Colors.grey,
+              // ),
+              30.spaceY,
               TitleWithOptionalButton(title: "Type", showButton: false),
               20.spaceY,
               Row(
@@ -38,7 +45,6 @@ class AddNewGroup extends StatelessWidget {
                   20.spaceX,
                   IconLabelBox(icon: Icons.other_houses_sharp, label: 'Home'),
                   20.spaceX,
-
                   IconLabelBox(icon: Icons.favorite, label: 'Couple'),
                   20.spaceX,
                   IconLabelBox(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/views/screens/add_expenses/widgets/group_container.dart';
 import 'package:project_core/presentation/views/screens/add_expenses/widgets/splits_types/split_amout_field.dart';
+import 'package:project_core/presentation/views/screens/onboarding_screens/widgets/social_buttons.dart';
 import 'package:project_core/shared/shared.dart';
 
 class UnequallySplit extends StatelessWidget {
@@ -8,72 +9,62 @@ class UnequallySplit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            GroupContainer(
-              groupName: "Saad Khan",
-              description: "200",
-              imageSize: 50,
-              groupImage: const Icon(
-                Icons.person,
-                color: Colors.white,
-                size: 30,
-              ),
-              trailing: const SplitAmountField(
-                icon: Icon(Icons.scale_outlined, color: Colors.white),
-              ),
-            ),
-            10.spaceY,
-            GroupContainer(
-              groupName: "Saad Khan",
-              description: "200",
-              imageSize: 50,
-              groupImage: const Icon(
-                Icons.person,
-                color: Colors.white,
-                size: 30,
-              ),
-              trailing: const SplitAmountField(
-                icon: Icon(Icons.scale_outlined, color: Colors.white),
-              ),
-            ),
-            10.spaceY,
-            GroupContainer(
-              groupName: "Saad Khan",
-              description: "200",
-              imageSize: 50,
-              groupImage: const Icon(
-                Icons.person,
-                color: Colors.white,
-                size: 30,
-              ),
-              trailing: const SplitAmountField(
-                icon: Icon(Icons.scale_outlined, color: Colors.white),
-              ),
-            ),
+    final List<Map<String, dynamic>> people = [
+      {'name': 'Sadiq Ali', 'amount': 200},
+      {'name': 'Ahmad Ali', 'amount': 300},
+      {'name': 'Zaid Khan', 'amount': 500},
+    ];
 
-            40.spaceY,
-            const Divider(color: Colors.white),
-            const SizedBox(height: 12),
-            const Center(
-              child: Column(
-                children: [
-                  Text(
-                    "\$0.00 of \$ 100",
-                    style: TextStyle(color: Colors.white, fontSize: 15),
+    return Column(
+      children: [
+        // main content
+        Expanded(
+          child: SingleChildScrollView(
+            child: ListView.separated(
+              itemCount: people.length,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              separatorBuilder: (context, index) => 10.spaceY,
+              itemBuilder: (context, index) {
+                final person = people[index];
+                return GroupContainer(
+                  groupName: person['name'],
+                  description: person['amount'].toString(),
+                  imageSize: 50,
+                  groupImage: const Icon(
+                    Icons.person,
+                    color: Colors.white,
+                    size: 30,
                   ),
-                  Text(
-                    "(\$100.00 left)",
-                    style: TextStyle(color: Colors.white),
+                  trailing: const SplitAmountField(
+                    icon: Icon(Icons.scale_outlined, color: Colors.white),
                   ),
-                ],
-              ),
+                );
+              },
             ),
-          ],
+          ),
         ),
-      ),
+        //
+        20.spaceY,
+        const Divider(color: Colors.white),
+        const Center(
+          child: Column(
+            children: [
+              Text("\$25.00 / person", style: TextStyle(color: Colors.white)),
+              Text("(4 people)", style: TextStyle(color: Colors.white)),
+            ],
+          ),
+        ),
+        10.spaceY,
+        SizedBox(
+          width: double.infinity,
+          child: CustomElevatedButton(
+            onPressed: () {},
+            isOutlined: false,
+            text: "Done",
+          ),
+        ),
+      ],
     );
   }
 }

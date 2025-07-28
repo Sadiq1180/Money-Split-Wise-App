@@ -14,16 +14,17 @@ class AddMembers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomTitle(title: "Add Members"),
       backgroundColor: AppColors.dark,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 18.0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomTitle(title: "Add Members"),
-                20.spaceY,
+                // CustomTitle(title: "Add Members"),
+                10.spaceY,
                 CustomSearchBar(
                   controller: TextEditingController(),
                   borderColor: AppColors.darkGrey,

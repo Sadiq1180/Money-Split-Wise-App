@@ -8,8 +8,9 @@ class SplitAmountField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 140,
+      width: 150,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           icon,
           const SizedBox(width: 8),
@@ -20,14 +21,18 @@ class SplitAmountField extends StatelessWidget {
                 hintText: "\$",
                 hintStyle: TextStyle(color: Colors.grey[400], fontSize: 13),
                 contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 8,
-                  vertical: 8,
+                  horizontal: 12,
+                  vertical: 10,
                 ),
                 filled: true,
-                fillColor: Colors.grey[800],
-                border: OutlineInputBorder(
+                fillColor: Colors.grey[850],
+                enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide.none,
+                  borderSide: BorderSide(color: Colors.grey.shade700),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: const BorderSide(color: Colors.amber),
                 ),
               ),
               keyboardType: TextInputType.number,

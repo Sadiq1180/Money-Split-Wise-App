@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
+<<<<<<< Updated upstream:lib/presentation/views/screens/add_expenses/with_you_and/with_you_and.dart
 import 'package:project_core/presentation/views/screens/add_expenses/widgets/custom_search_bar.dart';
 import 'package:project_core/presentation/views/screens/add_expenses/widgets/group_container.dart';
-import 'package:project_core/presentation/views/screens/add_expenses/with_you_and/add_members.dart';
-import 'package:project_core/presentation/views/screens/add_expenses/with_you_and/add_new_group.dart';
 import 'package:project_core/presentation/views/screens/home_screen/widgets/recent_bills.dart';
+=======
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/custom_search_bar.dart';
+import 'package:project_core/presentation/views/screens/main_screens/add_expenses/widgets/group_container.dart';
+import 'package:project_core/presentation/views/screens/main_screens/home_screen/widgets/recent_bills.dart';
+>>>>>>> Stashed changes:lib/presentation/views/screens/main_screens/add_expenses/with_you_and/with_you_and.dart
 import 'package:project_core/presentation/widgets/custom_title.dart';
 import 'package:project_core/shared/shared.dart';
 
@@ -18,20 +22,26 @@ class WithYouAnd extends StatelessWidget {
     "Group Name 2",
     "Group Name 3",
   ];
-
+  // friends
   final List<String> friends = const ["Friend 1", "Friend 2", "Friend 3"];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomTitle(title: "With you and"),
       backgroundColor: AppColors.dark,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 20.0),
+        padding: EdgeInsets.symmetric(horizontal: 18.0),
         child: KeyboardAware(
           child: SafeArea(
             child: Column(
               children: [
+<<<<<<< Updated upstream:lib/presentation/views/screens/add_expenses/with_you_and/with_you_and.dart
+                // CustomTitle(title: "With you and"),
+=======
+                //title
                 CustomTitle(title: "With you and"),
+>>>>>>> Stashed changes:lib/presentation/views/screens/main_screens/add_expenses/with_you_and/with_you_and.dart
                 10.spaceY,
                 CustomSearchBar(
                   controller: TextEditingController(),
@@ -47,11 +57,6 @@ class WithYouAnd extends StatelessWidget {
                         TitleWithOptionalButton(
                           title: "Groups",
                           showButton: false,
-                          // buttonText: "Add new",
-                          // showIcon: true,
-                          // onTap: () {
-                          //   Navigation.pushNamed(AddNewGroup.routeName);
-                          // },
                         ),
                         10.spaceY,
                         ListView.builder(
@@ -79,11 +84,6 @@ class WithYouAnd extends StatelessWidget {
                         TitleWithOptionalButton(
                           title: "Friends",
                           showButton: false,
-                          // buttonText: "Add new",
-                          // showIcon: true,
-                          // onTap: () {
-                          //   Navigation.pushNamed(AddMembers.routeName);
-                          // },
                         ),
                         10.spaceY,
                         ListView.builder(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
-import 'package:project_core/presentation/views/screens/add_expenses/who_paid.dart';
-import 'package:project_core/presentation/views/screens/add_expenses/adjust_split.dart';
+import 'package:project_core/presentation/views/screens/add_expenses/who_paid_screen.dart';
+import 'package:project_core/presentation/views/screens/add_expenses/adjust_split_screen.dart';
 import 'package:project_core/presentation/views/screens/add_expenses/widgets/bottom_icons.dart';
 import 'package:project_core/presentation/views/screens/add_expenses/widgets/group_container.dart';
 import 'package:project_core/presentation/views/screens/add_expenses/widgets/price_and_description.dart';
@@ -33,21 +33,21 @@ class _AddBillState extends State<AddBill> {
     return KeyboardAware(
       child: Scaffold(
         backgroundColor: AppColors.dark,
-        appBar:     const CustomTitle(title: "Add Expenses"),
+        appBar: const CustomTitle(title: "Add Expenses"),
         body: SafeArea(
           child: Column(
             children: [
+              /// add expenses fields data  here for clean code
               Expanded(
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 18.0,
-                    vertical: 20.0,
+                    // vertical: 20.0,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                  
-                      20.spaceY,
+                      // 20.spaceY,
                       TitleWithOptionalButton(
                         title: "with you and:",
                         showIcon: false,

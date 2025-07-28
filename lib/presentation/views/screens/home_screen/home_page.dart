@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_core/presentation/views/screens/add_expenses/add_bill.dart';
+import 'package:project_core/presentation/views/screens/add_expenses/add_bill_screen.dart';
 import 'package:project_core/presentation/views/screens/home_screen/widgets/all_expanses.dart';
 import 'package:project_core/presentation/views/screens/home_screen/widgets/all_transactions.dart';
 import 'package:project_core/presentation/views/screens/home_screen/widgets/home_header.dart';
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 //Greetings with icon
-                
+
                 //Divider
                 Padding(
                   padding: const EdgeInsets.only(left: 5, right: 5),

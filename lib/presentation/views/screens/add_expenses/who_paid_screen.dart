@@ -28,18 +28,19 @@ class _WhoPaidState extends State<WhoPaid> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomTitle(title: "Who Paid"),
       backgroundColor: const Color(0xFF1A1A1A),
       body: KeyboardAware(
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 18.0,
-              vertical: 20.0,
+              // vertical: 20.0,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CustomTitle(title: "Who Paid"),
+                // const CustomTitle(title: "Who Paid"),
                 24.spaceY,
                 Row(
                   children: [

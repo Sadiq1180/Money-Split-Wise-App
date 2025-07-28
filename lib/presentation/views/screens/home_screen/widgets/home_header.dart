@@ -24,7 +24,7 @@ class HomeGreeting extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.only(top: 10, right: 5, left: 5),
+        padding: const EdgeInsets.only(top: 10, right: 8, left: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
