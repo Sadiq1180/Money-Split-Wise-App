@@ -13,6 +13,10 @@ class ConfirmGroup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomTitle(
+        title: "",
+        trailing: const Icon(Icons.settings, color: Colors.white60),
+      ),
       backgroundColor: AppColors.dark,
       body: SafeArea(
         child: Padding(
@@ -20,11 +24,11 @@ class ConfirmGroup extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CustomTitle(
-                title: "",
-                trailing: const Icon(Icons.settings, color: Colors.white60),
-              ),
-              40.spaceY,
+              // CustomTitle(
+              //   title: "",
+              //   trailing: const Icon(Icons.settings, color: Colors.white60),
+              // ),
+              30.spaceY,
 
               // Image Container
               Center(

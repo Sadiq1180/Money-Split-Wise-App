@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_core/presentation/widgets/custom_title.dart';
 import 'package:project_core/shared/constants/app_colors.dart';
 
 class InsightScreen extends StatelessWidget {
@@ -10,7 +11,7 @@ class InsightScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.dark,
-      appBar: AppBar(title: const Text('Insights'), centerTitle: true),
+      appBar: CustomTitle(title: "Inshights"),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

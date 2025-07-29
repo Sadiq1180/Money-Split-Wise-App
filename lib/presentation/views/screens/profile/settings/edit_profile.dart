@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/keyboard_aware.dart';
 import 'package:project_core/presentation/views/screens/onboarding_screens/widgets/social_buttons.dart';
 import 'package:project_core/presentation/widgets/custom_label_field.dart';
+import 'package:project_core/presentation/widgets/custom_title.dart';
 import 'package:project_core/shared/constants/app_assets.dart';
 import 'package:project_core/shared/constants/app_colors.dart';
 import 'package:project_core/shared/extensions/sized_box.dart';
@@ -16,36 +17,15 @@ class EditProfile extends StatelessWidget {
     final TextEditingController emailController = TextEditingController();
 
     return Scaffold(
+      appBar: CustomTitle(title: "Edit Profile"),
       backgroundColor: AppColors.dark,
       body: KeyboardAware(
         child: SafeArea(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Back and Title
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () => Navigator.pop(context),
-                      child: const Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                        size: 20,
-                      ),
-                    ),
-                    10.spaceX,
-                    const Text(
-                      "Edit Profile",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
                 30.spaceY,
 
                 //  Profile Image

@@ -19,16 +19,16 @@ class CustomBottomNavigation extends StatelessWidget {
       height: Platform.isIOS ? 99 : 90,
       padding: const EdgeInsets.only(top: 5),
       alignment: Alignment.center,
-      color: AppColors.dark, // ✅ Matches HomePage background
+      color: AppColors.dark, 
       child: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: onTap,
         elevation: 0,
-        backgroundColor: AppColors.dark, // ✅ Matches HomePage background
+        backgroundColor: AppColors.dark, 
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
-        unselectedItemColor: AppColors.darkGrey, // ✅ Light grey
-        selectedItemColor: Colors.amberAccent, // ✅ White for active tab
+        unselectedItemColor: AppColors.darkGrey, 
+        selectedItemColor: Colors.amberAccent, 
         selectedLabelStyle: AppTextstyle.bodyTextStyle(
           fontSize: 12,
           fontWeight: FontWeight.w500,
@@ -72,7 +72,7 @@ class CustomBottomNavigation extends StatelessWidget {
         height: 26,
         width: 26,
         colorFilter: ColorFilter.mode(
-          isActive ? Colors.amberAccent : AppColors.darkGrey, // ✅ Icon color
+          isActive ? Colors.amberAccent : AppColors.darkGrey, 
           BlendMode.srcIn,
         ),
       ),

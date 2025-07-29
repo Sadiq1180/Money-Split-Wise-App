@@ -21,4 +21,5 @@ class AppAssets {
   static const person2 = "assets/images/person2.jpg";
   static const person3 = "assets/images/person3.jpg";
   static const person4 = "assets/images/person4.jpg";
+  static const person5 = "assets/images/person5.png";
 }
