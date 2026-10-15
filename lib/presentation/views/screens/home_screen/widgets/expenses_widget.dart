@@ -19,8 +19,7 @@ class ExpenseData {
 class ExpenseCardsWidget extends StatelessWidget {
   final List<ExpenseData> expenses;
 
-  const ExpenseCardsWidget({Key? key, required this.expenses})
-    : super(key: key);
+  const ExpenseCardsWidget({super.key, required this.expenses});
 
   @override
   Widget build(BuildContext context) {

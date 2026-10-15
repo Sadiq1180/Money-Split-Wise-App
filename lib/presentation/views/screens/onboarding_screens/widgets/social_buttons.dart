@@ -11,7 +11,7 @@ class CustomElevatedButton extends StatelessWidget {
   final Color? iconBackgroundColor;
 
   const CustomElevatedButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.isOutlined,
     required this.text,
@@ -20,7 +20,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.icon,
     this.imageAsset,
     this.iconBackgroundColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -63,10 +63,10 @@ class CustomElevatedButton extends StatelessWidget {
     );
 
     final commonStyle = ButtonStyle(
-      padding: MaterialStateProperty.all(
+      padding: WidgetStateProperty.all(
         const EdgeInsets.symmetric(vertical: 14),
       ),
-      shape: MaterialStateProperty.all(
+      shape: WidgetStateProperty.all(
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
     );
@@ -75,7 +75,7 @@ class CustomElevatedButton extends StatelessWidget {
       return OutlinedButton(
         onPressed: onPressed,
         style: commonStyle.copyWith(
-          side: MaterialStateProperty.all(BorderSide(color: backgroundColor)),
+          side: WidgetStateProperty.all(BorderSide(color: backgroundColor)),
         ),
         child: buttonChild,
       );
@@ -83,9 +83,9 @@ class CustomElevatedButton extends StatelessWidget {
       return ElevatedButton(
         onPressed: onPressed,
         style: commonStyle.copyWith(
-          backgroundColor: MaterialStateProperty.all(backgroundColor),
-          foregroundColor: MaterialStateProperty.all(textColor),
-          elevation: MaterialStateProperty.all(0),
+          backgroundColor: WidgetStateProperty.all(backgroundColor),
+          foregroundColor: WidgetStateProperty.all(textColor),
+          elevation: WidgetStateProperty.all(0),
         ),
         child: buttonChild,
       );

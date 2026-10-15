@@ -9,7 +9,10 @@ class CustomDivider extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: Container(height: 1, color: AppColors.grey.withOpacity(0.6)),
+          child: Container(
+            height: 1,
+            color: AppColors.grey.withValues(alpha: 0.6),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -23,7 +26,10 @@ class CustomDivider extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: Container(height: 1, color: AppColors.grey.withOpacity(0.6)),
+          child: Container(
+            height: 1,
+            color: AppColors.grey.withValues(alpha: 0.6),
+          ),
         ),
       ],
     );

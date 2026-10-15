@@ -15,11 +15,11 @@ class ProfileSelectorWidget extends StatefulWidget {
   final Function(ProfileData)? onProfileTapped;
 
   const ProfileSelectorWidget({
-    Key? key,
+    super.key,
     required this.profiles,
     this.onAddPressed,
     this.onProfileTapped,
-  }) : super(key: key);
+  });
 
   @override
   State<ProfileSelectorWidget> createState() => _ProfileSelectorWidgetState();

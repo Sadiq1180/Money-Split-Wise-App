@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/base_widgets/app_bottom_padding.dart';
-import 'package:project_core/shared/constants/app_textstyle.dart';
 import 'package:project_core/shared/shared.dart';
 
 class TermsPolicyWidget extends StatelessWidget {

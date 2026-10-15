@@ -83,8 +83,8 @@ class UserProfile extends ConsumerWidget {
                       ref.read(darkModeProvider.notifier).state = val;
                     },
                     // thumbColor: MaterialStateProperty.all(Colors.white),
-                    trackColor: MaterialStateProperty.resolveWith<Color>(
-                      (states) => states.contains(MaterialState.selected)
+                    trackColor: WidgetStateProperty.resolveWith<Color>(
+                      (states) => states.contains(WidgetState.selected)
                           ? Colors.green
                           : Colors.grey,
                     ),

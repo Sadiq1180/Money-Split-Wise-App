@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AddProfileButton extends StatelessWidget {
   final VoidCallback? onPressed;
 
-  const AddProfileButton({Key? key, this.onPressed}) : super(key: key);
+  const AddProfileButton({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,10 @@ class AddProfileButton extends StatelessWidget {
         height: 64,
         margin: const EdgeInsets.only(right: 12),
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey.withOpacity(0.5), width: 2),
+          border: Border.all(
+            color: Colors.grey.withValues(alpha: 0.5),
+            width: 2,
+          ),
           borderRadius: BorderRadius.circular(16),
         ),
         child: const Center(

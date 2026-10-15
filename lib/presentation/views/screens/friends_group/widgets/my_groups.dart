@@ -12,7 +12,7 @@ class MyGroups extends StatelessWidget {
   final VoidCallback? onTap;
 
   const MyGroups({
-    Key? key,
+    super.key,
     this.icon,
     required this.title,
     this.subtitle1,
@@ -21,7 +21,7 @@ class MyGroups extends StatelessWidget {
     this.rightIcon = Icons.keyboard_arrow_right,
     this.trailingWidget,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

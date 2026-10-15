@@ -8,12 +8,12 @@ class ExpenseCard extends StatelessWidget {
   final String subtitle;
 
   const ExpenseCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.amount,
     required this.originalAmount,
     required this.subtitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class ExpenseCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
+                    color: Colors.black.withValues(alpha: 0.2),
                     blurRadius: 8,
                     offset: Offset(0, 4),
                   ),

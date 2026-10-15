@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/shared/shared.dart';
 
-class FriendsListHeader extends StatelessWidget implements PreferredSizeWidget  {
-  const FriendsListHeader({Key? key}) : super(key: key);
-
+class FriendsListHeader extends StatelessWidget implements PreferredSizeWidget {
+  const FriendsListHeader({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(60);

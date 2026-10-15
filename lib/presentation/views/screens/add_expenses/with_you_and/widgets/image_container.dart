@@ -8,13 +8,13 @@ class ImageContainer extends StatelessWidget {
   final BorderRadius? borderRadius;
 
   const ImageContainer({
-    Key? key,
+    super.key,
     required this.assetPath,
     this.height = 100,
     this.width = 100,
     this.fit = BoxFit.cover,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -11,14 +11,14 @@ class HomeGreeting extends StatelessWidget implements PreferredSizeWidget {
   final bool showDot;
 
   const HomeGreeting({
-    Key? key,
+    super.key,
     this.userName = 'Sadiq',
     this.profileImage,
     this.greetingMessage = 'Easily split bills & track expenses',
     this.onIconTap,
     this.rightIcon = Icons.notifications_none,
     this.showDot = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

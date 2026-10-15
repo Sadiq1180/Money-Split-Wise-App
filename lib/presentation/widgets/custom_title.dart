@@ -5,8 +5,7 @@ class CustomTitle extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final Widget? trailing;
 
-  const CustomTitle({Key? key, required this.title, this.trailing})
-    : super(key: key);
+  const CustomTitle({super.key, required this.title, this.trailing});
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
   @override

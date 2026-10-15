@@ -11,7 +11,7 @@ class GroupContainer extends StatelessWidget {
   final Widget? trailing;
 
   const GroupContainer({
-    Key? key,
+    super.key,
     this.groupName,
     this.suffixText,
     this.description,
@@ -20,7 +20,7 @@ class GroupContainer extends StatelessWidget {
     this.onTap,
     this.borderColor,
     this.trailing,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

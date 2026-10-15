@@ -10,7 +10,7 @@ class AllTransactions extends StatelessWidget {
   final VoidCallback? onTap;
 
   const AllTransactions({
-    Key? key,
+    super.key,
     required this.title,
     required this.date,
     required this.time,
@@ -18,7 +18,7 @@ class AllTransactions extends StatelessWidget {
     required this.iconData,
     this.iconColor = const Color(0xFF4FC3F7),
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

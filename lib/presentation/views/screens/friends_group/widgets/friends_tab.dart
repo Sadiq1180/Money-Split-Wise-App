@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_core/presentation/views/screens/friends_group/widgets/freinds.dart';
-import 'package:project_core/shared/constants/app_assets.dart';
 import 'package:project_core/shared/shared.dart';
 
 class FriendsTab extends StatelessWidget {

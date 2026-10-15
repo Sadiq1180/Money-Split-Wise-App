@@ -8,13 +8,13 @@ class FriendsProfile extends StatelessWidget {
   final IconData? icon;
 
   const FriendsProfile({
-    Key? key,
+    super.key,
     required this.name,
     required this.amount,
     this.currency = '£',
     this.profileImage,
     this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class FriendsProfile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Avatar
-              Container(
+              SizedBox(
                 width: 45,
                 height: 45,
                 child: ClipRRect(

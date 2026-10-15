@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_core/shared/constants/app_colors.dart';
 import 'package:project_core/shared/shared.dart';
 
 class PaymentNotificationWidget extends StatelessWidget {
@@ -11,14 +10,14 @@ class PaymentNotificationWidget extends StatelessWidget {
   final String? secondaryMessage;
 
   const PaymentNotificationWidget({
-    Key? key,
+    super.key,
     required this.primaryMessage,
     required this.paidAmount,
     this.currency = '£',
     required this.owedAmount,
     this.icon,
     this.secondaryMessage,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +70,7 @@ class PaymentNotificationWidget extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          ' ${currency}${owedAmount.toStringAsFixed(2)}',
+                          ' $currency${owedAmount.toStringAsFixed(2)}',
                           style: const TextStyle(
                             color: Colors.redAccent,
                             fontSize: 14,

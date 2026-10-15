@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:project_core/presentation/base_widgets/privacy_policy.dart';
 import 'package:project_core/presentation/views/screens/onboarding_screens/login_screen.dart';
 import 'package:project_core/presentation/views/screens/onboarding_screens/widgets/app_header.dart';

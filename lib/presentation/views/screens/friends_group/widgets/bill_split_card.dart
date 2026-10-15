@@ -8,12 +8,12 @@ class BillSplitCard extends StatelessWidget {
   final VoidCallback? onSplitBill;
 
   const BillSplitCard({
-    Key? key,
+    super.key,
     required this.groupCount,
     required this.amountOwed,
     required this.totalAmount,
     this.onSplitBill,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
